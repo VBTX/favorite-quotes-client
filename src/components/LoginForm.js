@@ -46,7 +46,7 @@ return (
 
 const mapStateToProps = state => {
 	return {
-		loginForm
+		loginForm: state.loginForm
 	}
 }
 
