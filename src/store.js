@@ -8,7 +8,8 @@ import myQuotes from './reducers/myQuotes'
 const reducer = combineReducers({
 	currentUser,
 	loginForm,
-	myQuotes
+	myQuotes,
+	signupForm
 	})
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
