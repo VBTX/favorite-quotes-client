@@ -23,7 +23,7 @@ class App extends Component {
 
   render(){
   const {loggedIn, allQuotes, currentUser} = this.props
-  console.log(currentUser)
+
   return (
     <div className="App">
     <Router>

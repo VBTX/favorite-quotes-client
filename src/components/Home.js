@@ -9,8 +9,8 @@ import '../App.css';
 
 const Home = ({currentUser, loggedIn}) => (
 	<div>
-	<p> Home Component </p>
-	{ loggedIn ? <Logout/> : <h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3>} 	
+	<p><h1> Welcome, {currentUser.name}! </h1></p>
+	
 		
 	</div>
 );
