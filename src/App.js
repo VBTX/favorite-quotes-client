@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import logo from './logo.svg';
 import './App.css';
 import Login from "./components/LoginForm"
+import Home from "./components/Home"
 import { getCurrentUser } from "./actions/currentUser"
 
 class App extends Component {
@@ -13,13 +13,12 @@ class App extends Component {
   }
 
   render(){
+  const {loggedIn, allQuotes} = this.props
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-         <Login />
-      </header>
-
+        
+    <h1>App component</h1>
+    <Login />
     </div>
 
   );
@@ -36,3 +35,6 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, { getCurrentUser })(App)
+
+
+ // { loggedIn ? <Home /> : <Login /> }
