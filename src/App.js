@@ -4,6 +4,7 @@ import './App.css';
 import SignUp from "./components/Signup"
 import Login from "./components/LoginForm"
 import Home from "./components/Home"
+import MyQuotes from "./components/MyQuotes"
 import { getCurrentUser } from "./actions/currentUser"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar"
@@ -24,6 +25,7 @@ class App extends Component {
     {loggedIn ? <NavBar /> : <h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3> }   
     <h1>App component</h1>
     <Route exact path="/login" component={Login}/>
+    <Route exact path="/my-quotes" component={MyQuotes}/>
     </Router>
     </div>
 
