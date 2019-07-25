@@ -22,12 +22,12 @@ class App extends Component {
   }
 
   render(){
-  const {loggedIn, allQuotes} = this.props
+  const {loggedIn, allQuotes, currentUser} = this.props
+  console.log(currentUser)
   return (
     <div className="App">
     <Router>
-    {loggedIn ? <NavBar /> : <h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3> }   
-    <h1>App component</h1>
+    {loggedIn ? <><NavBar /> <Home/> </>: <h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3> }   
     <Switch>
     <Route exact path="/login" component={Login}/>
     <Route exact path="/signup" component={Signup}/>
@@ -53,17 +53,11 @@ class App extends Component {
 const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
-    allQuotes: state.myQuotes
+    allQuotes: state.myQuotes,
+    currentUser: state.currentUser
 
   })
 }
 
 
 export default connect(mapStateToProps, { getCurrentUser })(App)
-
-
- // { loggedIn ? <Home /> : <Login /> }
- // <Route exact path="/quotes/:id/edit"    render={props => {
- //           const quote = allquotes.find((quote) => quote.id === parseInt(props.match.params.id));
- //            return <EditFormWrapper quote={quote} {...props}/>
- //            }}/>
