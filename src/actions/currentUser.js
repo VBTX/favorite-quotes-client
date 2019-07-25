@@ -1,5 +1,6 @@
 import { resetLoginForm } from "./loginForm"
 import { getMyQuotes } from "./myQuotes"
+import { clearQuotes } from "./myQuotes"
 
 
 
@@ -73,3 +74,16 @@ export const login = (credentials, history) => {
     .catch(console.log)
   }
  }
+
+  export const logout = (history) => {
+  return dispatch => {
+    dispatch(clearCurrentUser())
+    dispatch(clearQuotes())
+    history.push("/")
+    return fetch("http://localhost:3001/api/v1/logout", {
+      credentials: "include",
+      method: "DELETE"
+    })
+  }
+ }
+
