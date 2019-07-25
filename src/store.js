@@ -3,6 +3,7 @@ import  thunk  from 'redux-thunk'
 import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import myQuotes from './reducers/myQuotes'
+import signupForm from './reducers/signupForm'
 
 
 const reducer = combineReducers({
