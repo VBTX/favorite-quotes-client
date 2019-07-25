@@ -11,6 +11,7 @@ const NavBar = ({currentUser, loggedIn}) => {
 		<NavLink exact className="activeClass" to="/">Home  </NavLink>
 		<NavLink exact className="activeClass" to="/my-quotes">My Quotes  </NavLink>
 		<NavLink exact className="activeClass" to="/my-quotes/new">New Quote  </NavLink>
+		<Logout />
 		</div>
 		)
 }
