@@ -65,13 +65,21 @@ export const getMyQuotes = () => {
 
 export const createQuote = (quoteData, history) => {
 	return dispatch => {
+		const sendableQuoteData = {
+			quote: {
+				author: quoteData.author,
+				text: quoteData.text,
+				source: quoteData.source,
+				user_id: quoteData.userId
+			}
+		}
 		return fetch("http://localhost:3001/api/v1/quotes", {
 			credentials: "include",
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
 			},
-			body: JSON.stringify(quoteData)
+			body: JSON.stringify(sendableQuoteData)
 		})
 		.then(r=> r.json())
 		.then(quote => {
@@ -123,7 +131,7 @@ export const updateQuote = (quoteData, history) => {
 
 export const deleteQuote = (quoteId, history) => {
 	return dispatch => {
-		return fetch(`http://localhost:3001/api/v1/quotess/${quoteId}`, {
+		return fetch(`http://localhost:3001/api/v1/quotes/${quoteId}`, {
 			credentials: "include",
 			method: "DELETE",
 			headers: {
@@ -137,7 +145,7 @@ export const deleteQuote = (quoteId, history) => {
 			} else{
 			dispatch(deleteQuoteSuccess(quoteId))
 			//this update will update the store
-			history.push("/my-quotes")
+			history.push('/my-quotes')
 		}
 		})
 		.catch(console.log)
