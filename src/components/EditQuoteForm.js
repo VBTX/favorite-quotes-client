@@ -7,7 +7,7 @@ import { resetQuoteForm } from "../actions/quoteForm"
 
 
 
-class EditFormWrapper extends Component {
+class EditQuoteForm extends Component {
  
 
  componentDidMount(){
@@ -43,4 +43,4 @@ class EditFormWrapper extends Component {
 	};
 
 
-export default connect(null, { updateQuote, setFormDataForEdit, resetNewForm, deletequote })(EditQuoteForm);
+export default connect(null, { updateQuote, setFormDataForEdit, resetQuoteForm, deleteQuote })(EditQuoteForm);
