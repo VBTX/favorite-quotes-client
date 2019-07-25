@@ -1,6 +1,7 @@
 import React from 'react';
 import { updateQuote } from '../actions/quoteForm'
 import { connect } from 'react-redux'
+import Button from 'react-bootstrap/Button';
 
 const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit, editMode }) => {
 
@@ -42,7 +43,11 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit
     	value={formData.source}
     	placeholder="source"
     	/><br/>
-    	<input type="submit" value={ editMode ? "Update" : "Add"}/>
+        { editMode ? 
+            <Button type="submit" variant="outline-secondary">Update</Button> : 
+            <Button type="submit" variant="outline-secondary">Add</Button> 
+        }
+    	
 
     </form>
   );
@@ -57,3 +62,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { updateQuote})(QuoteForm);
+
+ // value={ editMode ? "Update" : "Add"}
