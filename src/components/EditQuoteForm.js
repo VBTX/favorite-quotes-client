@@ -4,6 +4,7 @@ import { updateQuote, deleteQuote } from "../actions/myQuotes"
 import { connect } from "react-redux"
 import QuoteForm from "./QuoteForm"
 import { resetQuoteForm } from "../actions/quoteForm"
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -37,10 +38,13 @@ class EditQuoteForm extends Component {
 		const quoteId = quote ? quote.id : null 
 	return <>
 			<QuoteForm editMode history={this.history} handleSubmit={this.handleSubmit}/>
-			<button style={{color:"red"}} onClick={()=>deleteQuote(quoteId, history)}> Delete </button>
+			<Button variant="outline-danger" onClick={()=>deleteQuote(quoteId, history)}> Delete </Button>
 			</>
 }
 	};
 
 
 export default connect(null, { updateQuote, setFormDataForEdit, resetQuoteForm, deleteQuote })(EditQuoteForm);
+
+
+// style={{color:"red"}}
