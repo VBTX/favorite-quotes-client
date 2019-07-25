@@ -14,13 +14,10 @@ const SignUp = ({ signupForm, updateSignUpForm, signup, history }) => {
 		}
 		updateSignUpForm(updatedFormInfo)
 	}
-	
-	}
 
 	const handleSubmit = event => {
 		event.preventDefault()
 		signup(signupForm, history)
-
 
 	}
 	return (
