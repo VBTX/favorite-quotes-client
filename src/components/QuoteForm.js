@@ -51,7 +51,7 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit
 const mapStateToProps = state => {
     const userId =  state.currentUser ? state.currentUser.id : ""
 	return {
-		formData: state.newTrip,
+		formData: state.quoteForm,
         userId
 	}
 }
