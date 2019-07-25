@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { login } from '../actions/currentUser'
 import { updateLoginForm } from '../actions/loginForm'
+import Button from 'react-bootstrap/Button';
+
 
 const Login = ({ loginForm, updateLoginForm, login, history }) => {
 	const handleInputChange = event =>  {
@@ -38,7 +40,7 @@ return (
 		placeholder="password"
 		onChange={handleInputChange}
 		/>
-		<input type="submit" value="Log In"/>
+		<Button type="submit" variant="outline-primary">Log In</Button>
 		</form>
 
 		)
