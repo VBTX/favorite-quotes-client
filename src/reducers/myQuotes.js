@@ -10,8 +10,8 @@ export default (state = [], action) => {
 		// case "DELETE_QUOTE_SUCCESS":
 		// // console.log(state.quotes, action.quoteId)
 		// return state.filter(quote => quote.id === action.quoteId ? false:true)
-		// case "CLEAR_QUOTES":
-		//   return []
+		case "CLEAR_QUOTES":
+		  return []
 		default:
 		  return state
 	}
