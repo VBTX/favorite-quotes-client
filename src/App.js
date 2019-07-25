@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
 import Login from "./components/LoginForm"
+import { getCurrentUser } from "./actions/currentUser"
 
 class App extends Component {
+
+	componentDidMount(){
+      this.props.getCurrentUser()
+   
+  }
+
   render(){
   return (
     <div className="App">
@@ -18,4 +26,13 @@ class App extends Component {
 }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser,
+    allQuotes: state.myQuotes
+
+  })
+}
+
+
+export default connect(mapStateToProps, { getCurrentUser })(App)
