@@ -6,6 +6,11 @@ export const setMyQuotes = quotes => {
 	}
 }
 
+export const clearQuotes = () => {
+  return {
+    type: "CLEAR_QUOTES"
+  }
+ }
 
 
 
