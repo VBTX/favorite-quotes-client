@@ -46,5 +46,3 @@ class EditQuoteForm extends Component {
 
 export default connect(null, { updateQuote, setFormDataForEdit, resetQuoteForm, deleteQuote })(EditQuoteForm);
 
-
-// style={{color:"red"}}
