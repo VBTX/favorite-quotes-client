@@ -4,6 +4,8 @@ import './App.css';
 import Login from "./components/LoginForm"
 import Home from "./components/Home"
 import { getCurrentUser } from "./actions/currentUser"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NavBar from "./components/NavBar"
 
 class App extends Component {
 
@@ -16,9 +18,11 @@ class App extends Component {
   const {loggedIn, allQuotes} = this.props
   return (
     <div className="App">
-        
+    <Router>
+    {loggedIn ? <NavBar /> : null }   
     <h1>App component</h1>
     <Login />
+    </Router>
     </div>
 
   );
