@@ -2,6 +2,7 @@ import React from 'react';
 import { updateQuote } from '../actions/quoteForm'
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
 
 const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit, editMode }) => {
 
@@ -17,11 +18,12 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit
 	}
   return (
 
-
+    <Card border="success" style={{ width: '18rem', display: 'inline-block'}}>
     <form onSubmit={event => {
         event.preventDefault()
         handleSubmit(event, formData, userId, history)}}>
-    <h3> Add Quote details: </h3>
+    <Card.Header> Add Quote details: </Card.Header> <br/>
+    <Card.Body>
     	<input 
     	type="text"
     	name="author"
@@ -42,14 +44,16 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit
     	onChange={handleOnChange}
     	value={formData.source}
     	placeholder="source"
-    	/><br/>
+    	/>
+        </Card.Body>
         { editMode ? 
-            <Button type="submit" variant="outline-secondary">Update</Button> : 
-            <Button type="submit" variant="outline-secondary">Add</Button> 
+            <Button type="submit" variant="outline-success">Update</Button> : 
+            <Button type="submit" variant="outline-success">Add</Button> 
         }
     	
 
     </form>
+    </Card>
   );
 };
 

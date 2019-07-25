@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   render(){
-  const {loggedIn, allQuotes, currentUser} = this.props
+  const {loggedIn, allQuotes} = this.props
 
   return (
     <div className="App">
