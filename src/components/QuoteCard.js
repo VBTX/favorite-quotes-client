@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
-import NoteList from "./NoteList"
+// import NoteList from "./NoteList"
 import Card from 'react-bootstrap/Card'
 
 
@@ -9,9 +9,6 @@ import Card from 'react-bootstrap/Card'
 const QuoteCard = ({quote}) => {
 	
 
-	const handleSubmit = () => {
-	    quote.notes.map(n => <NoteList notes={n}/>)
-	}
 
 
 
@@ -38,3 +35,9 @@ export default QuoteCard
   //           <Button variant="outline-secondary" onClick={handleSubmit}>See Notes</Button> : 
   //           <Button type="submit" variant="outline-secondary">Add Note</Button> 
   //       }
+
+
+  
+	// const handleSubmit = () => {
+	//     quote.notes.map(n => <NoteList notes={n}/>)
+	// }
