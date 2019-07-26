@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { setFormDataForEdit } from "../actions/quoteForm"
-import { updateQuote, deleteQuote } from "../actions/myQuotes"
+import { updateQuote } from "../actions/myQuotes"
 import { connect } from "react-redux"
 import QuoteForm from "./QuoteForm"
 import { resetQuoteForm } from "../actions/quoteForm"
@@ -38,11 +38,10 @@ class EditQuoteForm extends Component {
 		const quoteId = quote ? quote.id : null 
 	return <>
 			<QuoteForm editMode history={this.history} handleSubmit={this.handleSubmit}/>
-			<Button variant="outline-danger" onClick={()=>deleteQuote(quoteId, history)}> Delete </Button>
 			</>
 }
 	};
 
 
-export default connect(null, { updateQuote, setFormDataForEdit, resetQuoteForm, deleteQuote })(EditQuoteForm);
+export default connect(null, { updateQuote, setFormDataForEdit, resetQuoteForm})(EditQuoteForm);
 
