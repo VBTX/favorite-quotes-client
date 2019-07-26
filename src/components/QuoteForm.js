@@ -1,10 +1,12 @@
 import React from 'react';
 import { updateQuote } from '../actions/quoteForm'
+import { deleteQuote } from "../actions/myQuotes"
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
+import { withRouter } from "react-router-dom"
 
-const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit, editMode }) => {
+const QuoteForm = ({ formData, updateQuote, history, userId, quoteId, handleSubmit, editMode, deleteQuote }) => {
 
 	const handleOnChange = event => {
 		const { name, value } = event.target
@@ -18,7 +20,7 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit
 	}
   return (
 
-    <Card border="success" style={{ width: '18rem', display: 'inline-block'}}>
+    <Card border="success" style={{ width: '20rem', display: 'inline-block', padding: '10px'}}>
     <form onSubmit={event => {
         event.preventDefault()
         handleSubmit(event, formData, userId, history)}}>
@@ -47,7 +49,11 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quote, handleSubmit
     	/>
         </Card.Body>
         { editMode ? 
-            <Button type="submit" variant="outline-success">Update</Button> : 
+            <>
+            <Button type="submit" variant="outline-success">Update</Button>
+            <Button variant="outline-danger" onClick={()=>deleteQuote(quoteId, history)}> Delete </Button>
+            </>
+             : 
             <Button type="submit" variant="outline-success">Add</Button> 
         }
     	
@@ -61,10 +67,11 @@ const mapStateToProps = state => {
     const userId =  state.currentUser ? state.currentUser.id : ""
 	return {
 		formData: state.quoteForm,
-        userId
+        userId,
+        quoteId: state.quoteForm.id
 	}
 }
 
-export default connect(mapStateToProps, { updateQuote})(QuoteForm);
+export default withRouter(connect(mapStateToProps, { updateQuote, deleteQuote })(QuoteForm));
 
  // value={ editMode ? "Update" : "Add"}
