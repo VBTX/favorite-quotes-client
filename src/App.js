@@ -27,6 +27,12 @@ class App extends Component {
   return (
     <div className="App">
     <Router>
+    
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     {loggedIn ? <><NavBar /> <Home/> </>: <h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3> }   
     <Switch>
     <Route exact path="/login" component={Login}/>

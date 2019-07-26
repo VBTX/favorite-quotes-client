@@ -1,26 +1,38 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
+import NoteList from "./NoteList"
+import Card from 'react-bootstrap/Card'
 
 
 
 const QuoteCard = ({quote}) => {
 	
+
+	const handleSubmit = () => {
+	    quote.notes.map(n => <NoteList notes={n}/>)
+	}
+
+
+
 	return (
 
 		quote ?
+		<Card border="success" style={{ width: '18rem', display: 'inline-block'}}>
 
-		<div className="quoteCard">
-		<h2>{quote.author}</h2><br />
-		<h3>{quote.text}</h3> <br/>
-		<h4>{quote.source}</h4><br/>
+		<Card.Header><b>Author: {quote.author} </b></Card.Header><br />
+		<Card.Body>{quote.text}<br/><br/>
+		<h6>Source: {quote.source}</h6>
+		<br/>
 		 { quote.notes.length > 0 ? 
-            <Button variant="outline-secondary" onClick={()=> quote.notes.map(n => console.log(n.text))}>See Notes</Button> : 
+            <Button variant="outline-secondary" onClick={handleSubmit}>See Notes</Button> : 
             <Button type="submit" variant="outline-secondary">Add Note</Button> 
         }
-		<Button variant="outline-secondary"><Link to={`/my-quotes/${quote.id}/edit`}>Edit Quote</Link></Button></div> :
+		<Button variant="outline-secondary"><Link to={`/my-quotes/${quote.id}/edit`}>Edit Quote</Link></Button></Card.Body></Card> :
 		null
 		)
 }
 
 export default QuoteCard
+
+		// <div className="quoteCard">

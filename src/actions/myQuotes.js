@@ -120,7 +120,7 @@ export const updateQuote = (quoteData, history) => {
 			} else{
 			dispatch(updateQuoteSuccess(quote))
 			//this update will update the store
-			// dispatch(resetNewForm()) --> we included componentWillUnmount in edit wrapper which resets the form. 
+			// dispatch(resetQuoteForm()) --> included componentWillUnmount in edit Quote Form which resets the form. 
 			history.push(`/my-quotes/${quote.id}`)
 		}
 		})
@@ -144,8 +144,9 @@ export const deleteQuote = (quoteId, history) => {
 				alert(quote.error)
 			} else{
 			dispatch(deleteQuoteSuccess(quoteId))
+			dispatch(resetQuoteForm())
 			//this update will update the store
-			history.push('/my-quotes')
+			history.push("/my-quotes")
 		}
 		})
 		.catch(console.log)
