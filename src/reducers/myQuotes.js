@@ -2,7 +2,7 @@ export default (state = [], action) => {
 	switch (action.type) {
 
 		case "SET_MY_QUOTES":
-		  return action.quotes
+		return action.quotes
 		case "ADD_QUOTE":
 		return state.concat(action.quote)
 		case "UPDATE_QUOTE":
@@ -12,6 +12,8 @@ export default (state = [], action) => {
 		return state.filter(quote => quote.id === action.quoteId ? false:true)
 		case "CLEAR_QUOTES":
 		  return []
+		case "FIND_IT":
+		return state.filter(quote => quote.text.includes(action.search))
 		default:
 		  return state
 	}

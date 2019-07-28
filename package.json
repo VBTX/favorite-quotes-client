@@ -6,6 +6,7 @@
     "bootstrap": "^4.3.1",
     "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
@@ -15,6 +16,7 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.87.3",
     "thunk": "^0.0.1"
   },
   "scripts": {

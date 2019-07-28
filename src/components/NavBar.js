@@ -3,12 +3,15 @@ import { connect } from 'react-redux'
 import Logout from './Logout'
 // import Login from './LoginForm'
 import { NavLink } from 'react-router-dom'
+// import { setSearch } from '../actions/search'
+
 // import Navbar from 'react-bootstrap/Navbar'
 // import Nav from 'react-bootstrap/Nav'
 
 
 
-const NavBar = ({currentUser, loggedIn}) => {
+const NavBar = ({setSearch, quotes}) => {
+
 	return (
 		<div className="nav">
 		<NavLink exact className="activeClass" to="/">Home  </NavLink>
@@ -21,9 +24,10 @@ const NavBar = ({currentUser, loggedIn}) => {
 const mapStateToProps = state => {
   return {
     currentUser: state.currentUser,
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
   }
 }
+
 
 export default connect(mapStateToProps)(NavBar)
 	// <NavLink exact activeClass to="/logout">Log Out</NavLink>

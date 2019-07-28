@@ -75,7 +75,7 @@ export const login = (credentials, history) => {
 			})
 		.catch(console.log)
  	}
-  console.log("e")
+  // console.log("e")
  }
 
  export const getCurrentUser = () => {
