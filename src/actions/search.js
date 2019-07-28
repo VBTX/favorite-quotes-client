@@ -13,6 +13,10 @@ export const findIt = (search) => {
 	}
 }
 
-
+export const resetSearchForm = () => {
+	return {
+		type: "RESET_Search_FORM"
+	}
+}
 //we will dispatch this object
 
