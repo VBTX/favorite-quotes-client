@@ -15,8 +15,9 @@ const NavBar = ({setSearch, quotes}) => {
 	return (
 		<div className="nav">
 		<NavLink exact className="activeClass" to="/">Home  </NavLink>
-		<NavLink exact className="activeClass" to="/my-quotes">My Quotes  </NavLink>
+		<NavLink exact className="activeClass" to="/my-quotes">My Quotes </NavLink>
 		<NavLink exact className="activeClass" to="/my-quotes/new">New Quote  </NavLink>
+		<NavLink exact className="activeClass" to="/search"> Search Quotes </NavLink>
 		<Logout />
 		</div>
 		)
