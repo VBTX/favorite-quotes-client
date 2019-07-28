@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { setSearch} from '../actions/search';
+import { setSearch, resetSearchForm } from '../actions/search';
 import { connect } from 'react-redux';
 import QuoteCard from './QuoteCard'
+import Button from 'react-bootstrap/Button';
+import { withRouter } from "react-router-dom"
 
 
 
@@ -27,12 +29,12 @@ class SearchQuotes extends Component {
 		event.preventDefault()	
 		const { quotes, search } = this.props	
  		const quote = quotes.filter(q => q.text.includes(search.search))
- 		if (quote){
+ 		if (quote.length>0){
  			this.setState({quote:quote, searched: true})
  		} else {
- 			return this.state
- 			// this.setState({quote:"No quotes match search criteria"})
- 		}	
+ 			this.setState({quote:quote, searched: true})
+ 		}
+ 		resetSearchForm()	
 }
 
 
@@ -41,15 +43,18 @@ class SearchQuotes extends Component {
 
 
  render () {
- 				return (<><form onSubmit={this.handleSubmit}>
+ 				return (<><form className="mr-sm-2" onSubmit={this.handleSubmit}>
 					<input
 			        name="search"
 			        placeholder="Search Your Quotes"
 			        type="text"
 			        onChange={this.handleInputChange}
-			      /><button type="submit"> SEARCH </button>
+			      /><Button variant="outline-success" type="submit">SEARCH</Button>
 			      </form><br/>
- 			      <QuoteCard quote={this.state.quote[0]}/></>)
+			        {(this.state.quote.length === 0) ? 
+			      	<h2>No quote matched your search</h2> :  <QuoteCard quote={this.state.quote[0]}/>
+			      }</>
+ 			   )
  			}
 }
 
@@ -66,7 +71,7 @@ const mapStateToProps = state => {
 		const mapDispatchToProps = {
 			setSearch
 		}
-export default connect(mapStateToProps, mapDispatchToProps)(SearchQuotes);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchQuotes));
 
 
 
