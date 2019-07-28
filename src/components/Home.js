@@ -5,22 +5,19 @@ import React from 'react';
 import { connect } from 'react-redux'
 // import { Link } from "react-router-dom";
 import '../App.css';
-import SearchQuotes from './SearchQuotes'
+// import SearchQuotes from './SearchQuotes'
 import RandomQuote from "./RandomQuote"
 
 
-const Home = ({currentUser, loggedIn}) => (
-	<div>
-	<br/>
-	<br/>
-	<h1> Welcome, {currentUser.name}! </h1>
-	<RandomQuote />
+const Home = ({currentUser, loggedIn}) => {
+	return (<>
 
+		{ currentUser ?
+		<><h1> Welcome, {currentUser.name}! </h1><RandomQuote /></> :
+		<h1> Welcome, stranger! Please log in! </h1>
+		}
 	
-		
-	</div>
-);
-
+</>)}
 
 
 const mapStateToProps = state => {
@@ -31,3 +28,15 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Home)
+
+
+// <div>
+// 	<br/>
+// 	<br/>
+// 	<h1> Welcome, {currentUser.name}! </h1>
+// 	<RandomQuote />
+
+
+	
+		
+// 	</div>
