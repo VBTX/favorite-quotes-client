@@ -15,7 +15,6 @@ const Home = ({currentUser, loggedIn}) => (
 	<br/>
 	<h1> Welcome, {currentUser.name}! </h1>
 	<RandomQuote />
-	<SearchQuotes />
 
 	
 		

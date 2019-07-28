@@ -12,6 +12,7 @@ import NavBar from "./components/NavBar"
 import { Link } from "react-router-dom";
 import EditQuoteForm from "./components/EditQuoteForm"
 import NewQuoteForm from "./components/NewQuoteForm"
+import SearchQuotes from "./components/SearchQuotes"
 
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup}/>
             <Route exact path="/my-quotes" component={MyQuotes}/>
+             <Route exact path="/search" component={SearchQuotes}/>
             <Route exact path="/my-quotes/new" component={NewQuoteForm}/>
             <Route exact path="/my-quotes/:id"    render={props => {
                    const quote = allQuotes.find((quote) => quote.id === parseInt(props.match.params.id));
