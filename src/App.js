@@ -32,8 +32,14 @@ class App extends Component {
             <br/>
             <br/>
             <br/>
-            {loggedIn ? <><NavBar/> <Home/> </> : <><h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3></> }   
+            {loggedIn ? <><NavBar/> </> : <><h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3></>}   
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <Switch>
+            <Route exact path="/" component={Home}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup}/>
             <Route exact path="/my-quotes" component={MyQuotes}/>
