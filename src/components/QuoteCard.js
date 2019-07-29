@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 // import NoteList from "./NoteList"
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
-import Comment from './Comment'
+import Note from './Note'
 import {connect} from 'react-redux'
+import NoteList from './NoteList'
 
 
 
 const QuoteCard = (props) => {
-
 	
 	return (
 
@@ -22,7 +22,8 @@ const QuoteCard = (props) => {
 		<ListGroup variant="flush">
 		<h2>{props.quote.text}</h2><br/><br/>
 		<h6>Source: {props.quote.source}</h6>
-		<Comment quoteId={props.quote.id} userId={props.currentUser.id} />
+						<NoteList notes={props.quote.notes}/>
+		<Note quoteId={props.quote.id} userId={props.currentUser.id} />
 		<Button variant="outline-secondary"><Link to={`/my-quotes/${props.quote.id}/edit`}><h3>Edit Quote</h3></Link></Button></ListGroup></Card.Body></Card> :
 		null
 		)

@@ -1,7 +1,8 @@
 const initialState = {
 	author: "",
 	text: "",
-	source: ""
+	source: "", 
+	notes: []
 }
 
 export default (state = initialState, action) => {
@@ -14,6 +15,9 @@ export default (state = initialState, action) => {
 
 		case "SET_FORM_DATA_FOR_EDIT":
 		return action.quote
+
+		case "ADD_NOTE":
+		return console.log(action)
 		
 		default:
 		  return state

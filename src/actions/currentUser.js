@@ -49,7 +49,6 @@ export const signup = (credentials, history) => {
 
 
 export const login = (credentials, history) => {
-  console.log("c")
  	return dispatch =>{
 		return fetch("http://localhost:3001/api/v1/login",{
 			credentials: "include",

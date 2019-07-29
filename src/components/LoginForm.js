@@ -20,11 +20,8 @@ const Login = ({ loginForm, updateLoginForm, login, history }) => {
 
 	const handleSubmit = event => {
 		event.preventDefault()
-		console.log("a")
 		login(loginForm, history)
-		console.log("b")
-		//a, c, d, e, b
-		//a, c, b, d
+
 }
 
 return (

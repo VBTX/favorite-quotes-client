@@ -13,7 +13,7 @@ const Home = ({currentUser, loggedIn}) => {
 	return (<>
 
 		{ currentUser ?
-		<><h1 style={{"font-family": "'Homemade Apple', cursive"}}><b> Welcome, {currentUser.name}! </b></h1><RandomQuote /></> :
+		<><h1 style={{"fontFamily": "'Homemade Apple', cursive"}}><b> Welcome, {currentUser.name}! </b></h1><RandomQuote /></> :
 		<h1> Welcome, stranger! Please log in! </h1>
 		}
 	

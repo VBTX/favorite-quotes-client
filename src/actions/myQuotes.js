@@ -97,6 +97,7 @@ export const createQuote = (quoteData, history) => {
 }
 
 export const updateQuote = (quoteData, history) => {
+
 	return dispatch => {
 		const sendableQuoteData = {
 			quote: {
