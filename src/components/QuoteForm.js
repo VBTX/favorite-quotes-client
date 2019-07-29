@@ -49,13 +49,6 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quoteId, handleSubm
     	value={formData.source}
     	placeholder="source"
     	/>
-        <input 
-        type="text"
-        name="note"
-        onChange={handleOnChange}
-        value={formData.note}
-        placeholder="note"
-        />
          </ListGroup>
         </Card.Body>
         { editMode ? 
