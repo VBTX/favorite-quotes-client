@@ -15,16 +15,21 @@ const QuoteCard = (props) => {
 	return (
 
 		props.quote ?
-		<Card border="success" style={{ width: '40rem', display: 'inline-block', padding: '10px'}}>
-
+		<><Card border="success" style={{ width: '40rem', display: 'inline-block', padding: '10px'}}>
 		<Card.Header><b><h1>Author: {props.quote.author} </h1></b></Card.Header><br />
 		<Card.Body>
 		<ListGroup variant="flush">
 		<h2>{props.quote.text}</h2><br/><br/>
 		<h6>Source: {props.quote.source}</h6>
-						<NoteList notes={props.quote.notes}/>
+		<Button variant="outline-secondary"><Link to={`/my-quotes/${props.quote.id}/edit`}><h3>Edit Quote</h3></Link></Button></ListGroup></Card.Body></Card>
+		<Card border="danger" style={{ width: '40rem', display: 'inline-block', padding: '10px'}}>
+		<Card.Header><b><h1>Your Notes</h1></b></Card.Header><br />
+		<Card.Body>
+		<ListGroup variant="flush">
+		<NoteList notes={props.quote.notes}/>
 		<Note quoteId={props.quote.id} userId={props.currentUser.id} />
-		<Button variant="outline-secondary"><Link to={`/my-quotes/${props.quote.id}/edit`}><h3>Edit Quote</h3></Link></Button></ListGroup></Card.Body></Card> :
+		</ListGroup></Card.Body></Card></>
+		 :
 		null
 		)
 }
