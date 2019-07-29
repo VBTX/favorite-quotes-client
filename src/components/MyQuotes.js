@@ -6,7 +6,7 @@ import QuickQuoteCard from './QuickQuoteCard'
 
 const MyQuotes = props => {
 	const quoteCards = props.quotes.length > 0 ? 
-	props.quotes.map( q => <QuickQuoteCard quote={q}/>) : "No quotes at the moment"
+	<div align="center">{props.quotes.map( q => <QuickQuoteCard quote={q}/>)}</div> : "No quotes at the moment"
 	return quoteCards
 	}
 
