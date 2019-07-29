@@ -45,7 +45,7 @@ render() {
 		<br/>
 		<br/>
 		{ this.state.quote.length > 0 ?
-		<QuickQuoteCard quote={this.state.quote}/> : null }
+		<div align="center" style={{"margin-left": "0px"}}><QuickQuoteCard quote={this.state.quote}/></div> : null }
 		</>
 
 		)

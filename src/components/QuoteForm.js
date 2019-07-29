@@ -4,6 +4,7 @@ import { deleteQuote } from "../actions/myQuotes"
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
 import { withRouter } from "react-router-dom"
 
 const QuoteForm = ({ formData, updateQuote, history, userId, quoteId, handleSubmit, editMode, deleteQuote }) => {
@@ -20,12 +21,13 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quoteId, handleSubm
 	}
   return (
 
-    <Card border="success" style={{ width: '20rem', display: 'inline-block', padding: '10px'}}>
+    <Card border="success" style={{ width: '40rem', display: 'inline-block', padding: '10px'}}>
     <form onSubmit={event => {
         event.preventDefault()
         handleSubmit(event, formData, userId, history)}}>
     <Card.Header> Add Quote details: </Card.Header> <br/>
     <Card.Body>
+     <ListGroup variant="flush">
     	<input 
     	type="text"
     	name="author"
@@ -33,7 +35,7 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quoteId, handleSubm
     	onChange={handleOnChange}
     	placeholder="author"
     	/><br/>
-    	<input 
+    	<textarea
     	type="text"
     	name="text"
     	onChange={handleOnChange}
@@ -47,6 +49,14 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quoteId, handleSubm
     	value={formData.source}
     	placeholder="source"
     	/>
+        <input 
+        type="text"
+        name="note"
+        onChange={handleOnChange}
+        value={formData.note}
+        placeholder="note"
+        />
+         </ListGroup>
         </Card.Body>
         { editMode ? 
             <>
@@ -73,5 +83,3 @@ const mapStateToProps = state => {
 }
 
 export default withRouter(connect(mapStateToProps, { updateQuote, deleteQuote })(QuoteForm));
-
- // value={ editMode ? "Update" : "Add"}
