@@ -7,11 +7,11 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Note from './Note'
 import {connect} from 'react-redux'
 import NoteList from './NoteList'
+import { withRouter } from "react-router-dom"
 
 
 
 const QuoteCard = (props) => {
-	
 	return (
 
 		props.quote ?
@@ -26,7 +26,7 @@ const QuoteCard = (props) => {
 		<Card.Header><b><h1>Your Notes</h1></b></Card.Header><br />
 		<Card.Body>
 		<ListGroup variant="flush">
-		<NoteList notes={props.quote.notes}/>
+		<NoteList notes={props.quote.notes} history={props.history}/>
 		<Note quoteId={props.quote.id} userId={props.currentUser.id} />
 		</ListGroup></Card.Body></Card></>
 		 :
@@ -40,7 +40,7 @@ const QuoteCard = (props) => {
 			currentUser: state.currentUser
 		}
 	}
-export default connect(mapStateToProps)(QuoteCard)
+export default withRouter(connect(mapStateToProps)(QuoteCard))
 
 		// <div className="quoteCard">
 
