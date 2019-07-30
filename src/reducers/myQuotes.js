@@ -14,8 +14,8 @@ export default (state = [], action) => {
 		  return []
 		case "FIND_IT":
 		return state.filter(quote => quote.text.includes(action.search))
-		case "ADD_NOTE":
-		return state.find(q => q.id===action.note.quote_id ? q.notes.push(action.note) :false)
+		// case "ADD_NOTE":
+		// return state.find(q => q.id===action.note.quote_id ? q.notes.push(action.note) :false)
 		default:
 		  return state
 	}
