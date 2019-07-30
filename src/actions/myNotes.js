@@ -1,3 +1,5 @@
+import { getMyQuotes } from './myQuotes'
+
 
 export const createNote = (noteData, history) => {
 	return dispatch => {
@@ -22,7 +24,8 @@ export const createNote = (noteData, history) => {
 			if (note.error) {
 				alert(note.error)
 			} else {
-			history.push("/my-quotes/")
+			dispatch(getMyQuotes())
+			history.push(history.location.pathname)
 		}
 		})
 		.catch(console.log)
@@ -73,8 +76,8 @@ export const deleteNote = (note, history) => {
 			if (note.error) {
 				alert(note.error)
 			} else{
-			const path = history.location.pathname
-			history.push("/my-quotes")
+			dispatch(getMyQuotes())
+			history.push(history.location.pathname)
 		}
 		})
 		.catch(console.log)
