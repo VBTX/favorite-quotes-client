@@ -21,7 +21,7 @@ const QuoteCard = (props) => {
 		<ListGroup variant="flush">
 		<h2>{props.quote.text}</h2><br/><br/>
 		<h6>Source: {props.quote.source}</h6>
-		<Button variant="outline-secondary"><Link to={`/my-quotes/${props.quote.id}/edit`}><h3>Edit Quote</h3></Link></Button></ListGroup></Card.Body></Card>
+		<Button variant="secondary"><Link className="button-link" to={`/my-quotes/${props.quote.id}/edit`}><h6>EDIT QUOTE</h6></Link></Button></ListGroup></Card.Body></Card>
 		<Card border="danger" style={{ width: '40rem', display: 'inline-block', padding: '10px'}}>
 		<Card.Header><b><h1>Your Notes</h1></b></Card.Header><br />
 		<Card.Body>

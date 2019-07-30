@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { createNote } from "../actions/myNotes"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
+import ListGroup from 'react-bootstrap/ListGroup'
 
 class Note extends React.Component {
 
@@ -26,10 +27,12 @@ class Note extends React.Component {
     return (
       <div>
       	<form onSubmit={this.handleSubmit}>
+        <ListGroup variant="flush">
       	<h3>Add a note:</h3>
       	<textarea type="text" name="text" value={this.props.text}
       	onChange={this.handleChange} /><br/>
       	<Button type="submit" variant="secondary">SUBMIT</Button>
+         </ListGroup>
       	</form>
       </div>
     );

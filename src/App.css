@@ -40,6 +40,10 @@
   font-size: 30px;
 }
 
+.nav-link:hover{
+  text-decoration: none;
+}
+
 
 .quoteCard {
   background:  whitesmoke;
@@ -63,6 +67,15 @@ a.active {
 
 .link {
   color:  black;
+}
+
+.button-link {
+  color:  white;
+}
+
+.button-link:hover {
+  color:  white;
+  text-decoration: none;
 }
 /* .wrapper {
   display: grid;

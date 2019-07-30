@@ -25,7 +25,7 @@ const QuoteForm = ({ formData, updateQuote, history, userId, quoteId, handleSubm
     <form onSubmit={event => {
         event.preventDefault()
         handleSubmit(event, formData, userId, history)}}>
-    <Card.Header> Add Quote details: </Card.Header> <br/>
+    <Card.Header><strong><h2> Add Quote details: </h2></strong></Card.Header> <br/>
     <Card.Body>
      <ListGroup variant="flush">
     	<input 
