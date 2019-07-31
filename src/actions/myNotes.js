@@ -32,35 +32,35 @@ export const createNote = (noteData, history) => {
 	}
 }
 
-export const updateNote = (noteData, history) => {
+// export const updateNote = (noteData, history) => {
 
-	return dispatch => {
-		const sendableNoteData = {
-			note: {
-				text: noteData.text,
-				quote_id: noteData.quoteId,
-				user_id: noteData.userId
-			}
-		}
-		return fetch(`http://localhost:3001/api/v1/notes/${noteData.id}`, {
-			credentials: "include",
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(sendableNoteData)
-		})
-		.then(r=> r.json())
-		.then(quote => {
-			if (quote.error) {
-				alert(quote.error)
-			} else{
-			history.push(`history.location.pathname`)
-		}
-		})
-		.catch(console.log)
-	}
-}
+// 	return dispatch => {
+// 		const sendableNoteData = {
+// 			note: {
+// 				text: noteData.text,
+// 				quote_id: noteData.quoteId,
+// 				user_id: noteData.userId
+// 			}
+// 		}
+// 		return fetch(`http://localhost:3001/api/v1/notes/${noteData.id}`, {
+// 			credentials: "include",
+// 			method: "PATCH",
+// 			headers: {
+// 				"Content-Type": "application/json"
+// 			},
+// 			body: JSON.stringify(sendableNoteData)
+// 		})
+// 		.then(r=> r.json())
+// 		.then(quote => {
+// 			if (quote.error) {
+// 				alert(quote.error)
+// 			} else{
+// 			history.push(`history.location.pathname`)
+// 		}
+// 		})
+// 		.catch(console.log)
+// 	}
+// }
 
 export const deleteNote = (note, history) => {
 	return dispatch => {

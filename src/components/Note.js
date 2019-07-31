@@ -8,7 +8,8 @@ import ListGroup from 'react-bootstrap/ListGroup'
 class Note extends React.Component {
 
   state={
-    text: ""
+    text: "",
+    submit:false
   }
   handleChange = event => {
     const {name, value} = event.target
@@ -20,8 +21,20 @@ class Note extends React.Component {
 
   handleSubmit = (event, userId, quoteId, history) => {
   	event.preventDefault()
+    this.setState({...this.state.text, [this.state.submit]: true})
+    debugger
   	this.props.createNote({text: this.state.text, userId:this.props.userId, quoteId:this.props.quoteId}, this.props.history)
     };
+  
+  componentDidUpdate(prevProps) {
+  // Typical usage (don't forget to compare props):
+  if (this.state.submit === true) {
+      this.setState({
+      text:"",
+      submit: false
+    });
+  }
+} 
 
   render() {
     return (

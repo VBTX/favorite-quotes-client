@@ -3,7 +3,9 @@ import { setSearch, resetSearchForm } from '../actions/search';
 import { connect } from 'react-redux';
 import QuoteCard from './QuoteCard'
 import Button from 'react-bootstrap/Button';
+// import NavBar from 'react-bootstrap/NavBar';
 import { withRouter } from "react-router-dom"
+import Form from 'react-bootstrap/Form';
 
 
 
@@ -43,14 +45,14 @@ class SearchQuotes extends Component {
 
 
  render () {
- 				return (<><form className="mr-sm-2" onSubmit={this.handleSubmit}>
+ 				return (<><Form inline><form className="mr-sm-2" onSubmit={this.handleSubmit}>
 					<input
 			        name="search"
 			        placeholder="Search Your Quotes"
 			        type="text"
 			        onChange={this.handleInputChange}
 			      /><Button variant="outline-success" type="submit">SEARCH</Button>
-			      </form><br/>
+			      </form></Form><br/>
 			        {(this.state.quote.length === 0) ? 
 			      	<h2>No quote matched your search</h2> :  <QuoteCard quote={this.state.quote[0]}/>
 			      }</>

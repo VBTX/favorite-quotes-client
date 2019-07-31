@@ -60,7 +60,6 @@ export const login = (credentials, history) => {
 		})
 		.then(r => r.json())
 		.then(user => {
-      console.log("d")
 			if (user.error) {
 				alert(user.error)
 			} else {
