@@ -25,7 +25,7 @@ render(){
     <ul>
     {this.props.notes.map((n, i) =>
     	<h3 key={i} align="left">
-    	<li>{n.text}{this.state.clicked === true && n.id === this.state.n.id ? <NoteEditForm note={this.state.n}/> : null}
+    	<li>{n.text}{this.state.clicked === true && n.id === this.state.n.id ? <NoteEditForm note={this.state.n} state={this.state}/> : null}
         <Button variant="outline-success" onClick={()=>{this.handleClick(n)}}>Edit</Button>
     	<Button variant="outline-danger" onClick={()=>deleteNote(n, this.props.history)}>X</Button></li><br/>
     	</h3>
