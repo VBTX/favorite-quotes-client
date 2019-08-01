@@ -2,20 +2,33 @@ import React, { Component } from 'react';
 import { updateNote } from "../actions/myNotes"
 import { connect } from "react-redux"
 import Button from 'react-bootstrap/Button';
-
+import { withRouter } from "react-router-dom"
 
 
 
 class NoteEditForm extends Component {
 
-handleChange = () => {
-	
+
+constructor(props){
+	  super(props);
+		    this.state={
+			note: this.props.state.n
+	}
+}
+handleChange = (event) => {
+	this.setState({...this.state, note: {[event.target.name]:event.target.value}});
+}
+
+handleSubmit = (event) =>{
+	event.preventDefault()
+	const updatedNote = {text: this.state.note.text, noteId: this.props.note.id, quoteId: this.props.note.quote_id}
+	this.props.updateNote(updatedNote, this.props.history)
 }
 render() {
      return <div>
       	<form onSubmit={this.handleSubmit}>
-      	<textarea type="text" name="text" value={this.props.note.text}
-      	onChange={this.handleChange} /><Button type="submit" variant="secondary">SUBMIT</Button>
+      	<textarea type="text" name="text" value={this.state.note.text}
+      	onChange={this.handleChange} /><Button type="submit" onClick={this.handleSubmit} variant="secondary">SUBMIT</Button>
       	</form>
       </div>
 
@@ -27,7 +40,8 @@ render() {
 
 
 
-export default connect(null, { updateNote })(NoteEditForm);
+
+export default withRouter(connect(null, { updateNote })(NoteEditForm));
 
 
      
