@@ -8,11 +8,13 @@ import Button from 'react-bootstrap/Button';
 
 class NoteEditForm extends Component {
 
-
+handleChange = () => {
+	
+}
 render() {
      return <div>
       	<form onSubmit={this.handleSubmit}>
-      	<textarea type="text" name="text" value={console.log(this.props.note.text)}
+      	<textarea type="text" name="text" value={this.props.note.text}
       	onChange={this.handleChange} /><Button type="submit" variant="secondary">SUBMIT</Button>
       	</form>
       </div>
