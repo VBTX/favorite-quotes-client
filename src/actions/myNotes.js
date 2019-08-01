@@ -33,18 +33,15 @@ export const createNote = (noteData, history) => {
 }
 
 export const updateNote = (noteData, history) => {
-
-	console.log(noteData)
-
 	return dispatch => {
 		const sendableNoteData = {
 			note: {
 				text: noteData.text,
-				quote_id: noteData.quoteId,
-				user_id: noteData.userId
+				// quote_id: noteData.quoteId,
+				id: noteData.noteId
 			}
 		}
-		return fetch(`http://localhost:3001/api/v1/notes/${noteData.id}`, {
+		return fetch(`http://localhost:3001/api/v1/notes/${noteData.noteId}`, {
 			credentials: "include",
 			method: "PATCH",
 			headers: {
@@ -57,7 +54,8 @@ export const updateNote = (noteData, history) => {
 			if (note.error) {
 				alert(note.error)
 			} else{
-			alert('clicked')
+			  dispatch(getMyQuotes())
+			  history.push(history.location.pathname)
 		}
 		})
 		.catch(console.log)
