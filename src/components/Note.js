@@ -9,7 +9,7 @@ class Note extends React.Component {
 
   state={
     text: "",
-    submit:false
+    // submit:false
   }
   handleChange = event => {
     const {name, value} = event.target
@@ -21,9 +21,9 @@ class Note extends React.Component {
 
   handleSubmit = (event, userId, quoteId, history) => {
   	event.preventDefault()
-    this.setState({...this.state.text, [this.state.submit]: true})
-    debugger
+    // this.setState({...this.state.text, [this.state.submit]: true})
   	this.props.createNote({text: this.state.text, userId:this.props.userId, quoteId:this.props.quoteId}, this.props.history)
+    this.mainInput.value = ""
     };
   
   componentDidUpdate(prevProps) {
@@ -42,7 +42,7 @@ class Note extends React.Component {
       	<form onSubmit={this.handleSubmit}>
         <ListGroup variant="flush">
       	<h3>Add a note:</h3>
-      	<textarea type="text" name="text" value={this.props.text}
+      	<textarea ref={(ref) => this.mainInput= ref} type="text" name="text" value={this.props.text}
       	onChange={this.handleChange} /><br/>
       	<Button type="submit" variant="secondary">SUBMIT</Button>
          </ListGroup>
