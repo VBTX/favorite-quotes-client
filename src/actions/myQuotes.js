@@ -68,9 +68,9 @@ export const createQuote = (quoteData, history) => {
 	return dispatch => {
 		const sendableQuoteData = {
 			quote: {
-				author: quoteData.author,
-				text: quoteData.text,
-				source: quoteData.source,
+				author: quoteData.author || quoteData.quote.author,
+				text: quoteData.text || quoteData.quote.quote,
+				source: quoteData.source || quoteData.quote.permalink,
 				user_id: quoteData.userId
 			}
 		}
