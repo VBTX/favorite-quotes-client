@@ -46,12 +46,12 @@ class SearchQuotes extends Component {
 
  render () {
  				return (<><Form className="mr-sm-2" onSubmit={this.handleSubmit}>
-					<input
+					<h2><input
 			        name="search"
 			        placeholder="Search Your Quotes"
 			        type="text"
 			        onChange={this.handleInputChange}
-			      /><Button variant="outline-success" type="submit">SEARCH</Button>
+			      /></h2><Button variant="success" type="submit">SEARCH</Button>
 			   </Form><br/>
 			        {(this.state.quote.length === 0) ? 
 			      	<h2>No quote matched your search</h2> :  <QuoteCard quote={this.state.quote[0]}/>

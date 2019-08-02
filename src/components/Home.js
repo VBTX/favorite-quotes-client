@@ -3,10 +3,11 @@ import React from 'react';
 // import Signup from './SignUp'
 // import Logout from './Logout'
 import { connect } from 'react-redux'
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../App.css';
 // import SearchQuotes from './SearchQuotes'
 import RandomQuote from "./RandomQuote"
+import Button from 'react-bootstrap/Button';
 
 
 const Home = ({currentUser, loggedIn}) => {
@@ -14,7 +15,7 @@ const Home = ({currentUser, loggedIn}) => {
 
 		{ currentUser ?
 		<><h1 style={{"fontFamily": "'Homemade Apple', cursive"}}><b> Welcome, {currentUser.name}! </b></h1><RandomQuote /></> :
-		<h1> Welcome, stranger! Please log in! </h1>
+		<><b><h1 style={{"fontFamily": "'Homemade Apple', cursive"}}> Welcome, stranger! Please <Button variant="primary" size="lg" style={{"fontFamily": 'sans-serif'}}><Link to="/signup" className="button-link">SIGN UP</Link></Button> or <Button variant="success" size="lg" style={{"fontFamily": 'sans-serif'}}><Link to="/login" className="button-link">LOG IN</Link></Button>!</h1></b></>
 		}
 	
 </>)}

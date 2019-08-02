@@ -9,7 +9,6 @@ import QuoteCard from "./components/QuoteCard"
 import { getCurrentUser } from "./actions/currentUser"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar"
-import { Link } from "react-router-dom";
 import EditQuoteForm from "./components/EditQuoteForm"
 import NewQuoteForm from "./components/NewQuoteForm"
 import SearchQuotes from "./components/SearchQuotes"
@@ -32,7 +31,7 @@ class App extends Component {
             <br/>
             <br/>
             <br/>
-            {loggedIn ? <><NavBar/> </> : <><h3>Welcome! Please <Link to="/signup" className="link">Sign Up</Link> or <Link to="/login" className="link">Log In</Link>!</h3></>}   
+            {loggedIn ? <><NavBar/> </> : null}   
             <br/>
             <br/>
             <br/>
