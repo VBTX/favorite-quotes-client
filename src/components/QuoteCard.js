@@ -46,17 +46,3 @@ const QuoteCard = (props) => {
 		}
 	}
 export default withRouter(connect(mapStateToProps)(QuoteCard))
-
-		// <div className="quoteCard">
-
-		// <br/>
-		//  { quote.notes.length > 0 ? 
-  //           <Button variant="outline-secondary" onClick={handleSubmit}>See Notes</Button> : 
-  //           <Button type="submit" variant="outline-secondary">Add Note</Button> 
-  //       }
-
-
-  
-	// const handleSubmit = () => {
-	//     quote.notes.map(n => <NoteList notes={n}/>)
-	// }
