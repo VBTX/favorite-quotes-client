@@ -39,9 +39,9 @@ render() {
 		<br/>
 		<br/>
 		{ this.state.clicked === false ?
-				<Button type="submit" variant="success" onClick={this.handleSubmit}>GET QUOTE OF THE DAY</Button> :
+				<Button type="submit" variant="success" onClick={this.handleSubmit} style={{"fontFamily": 'sans-serif'}}>GET QUOTE OF THE DAY</Button> :
 
-				<Button type="submit" variant="secondary" onClick={this.handleSubmit}>HIDE QUOTE OF THE DAY</Button>
+				<Button type="submit" variant="secondary" onClick={this.handleSubmit} style={{"fontFamily": 'sans-serif'}}>HIDE QUOTE OF THE DAY</Button>
 			}
 		<br/>
 		<br/>
