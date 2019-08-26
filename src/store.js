@@ -7,6 +7,7 @@ import myQuotes from './reducers/myQuotes'
 import signupForm from './reducers/signupForm'
 import quoteForm from './reducers/quoteForm'
 import search from './reducers/search'
+import categories from './reducers/categories'
 
 
 const reducer = combineReducers({
@@ -15,7 +16,8 @@ const reducer = combineReducers({
 	myQuotes,
 	signupForm,
 	quoteForm,
-	search
+	search,
+	categories
 	})
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

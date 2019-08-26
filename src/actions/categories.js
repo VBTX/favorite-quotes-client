@@ -57,34 +57,34 @@ export const getMyCategories = () => {
 	}
 }
 
-export const createQuote = (quoteData, history) => {
-	return dispatch => {
-		const sendableQuoteData = {
-			quote: {
-				author: quoteData.author || quoteData.quote.author,
-				text: quoteData.text || quoteData.quote.quote,
-				source: quoteData.source || quoteData.quote.permalink,
-				user_id: quoteData.userId
-			}
-		}
-		return fetch("http://localhost:3001/api/v1/quotes", {
-			credentials: "include",
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(sendableQuoteData)
-		})
-		.then(r=> r.json())
-		.then(quote => {
-			if (quote.error) {
-				alert(quote.error)
-			} else{
-			dispatch(addQuote(quote))
-			dispatch(resetQuoteForm())
-			history.push(`/my-quotes/${quote.id}`)
-		}
-		})
-		.catch(console.log)
-	}
-}
+// export const createQuote = (quoteData, history) => {
+// 	return dispatch => {
+// 		const sendableQuoteData = {
+// 			quote: {
+// 				author: quoteData.author || quoteData.quote.author,
+// 				text: quoteData.text || quoteData.quote.quote,
+// 				source: quoteData.source || quoteData.quote.permalink,
+// 				user_id: quoteData.userId
+// 			}
+// 		}
+// 		return fetch("http://localhost:3001/api/v1/quotes", {
+// 			credentials: "include",
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/json"
+// 			},
+// 			body: JSON.stringify(sendableQuoteData)
+// 		})
+// 		.then(r=> r.json())
+// 		.then(quote => {
+// 			if (quote.error) {
+// 				alert(quote.error)
+// 			} else{
+// 			dispatch(addQuote(quote))
+// 			dispatch(resetQuoteForm())
+// 			history.push(`/my-quotes/${quote.id}`)
+// 		}
+// 		})
+// 		.catch(console.log)
+// 	}
+// }
