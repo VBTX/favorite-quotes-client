@@ -17,9 +17,9 @@ import SearchQuotes from "./components/search/SearchQuotes"
 class App extends Component {
 
 
-  componentWillMount(){
-    console.log(this.state)
-  }
+  // componentWillMount(){
+  //   console.log(this.state)
+  // }
 
 	componentDidMount(){
       this.props.getCurrentUser()
