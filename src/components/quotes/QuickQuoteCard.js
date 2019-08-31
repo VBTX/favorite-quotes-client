@@ -1,7 +1,7 @@
 import React from 'react'
 import './QuickCard.css'
 import { Link } from 'react-router-dom'
-import { createQuote } from "../actions/myQuotes"
+import { createQuote } from "../../actions/myQuotes"
 import { connect } from "react-redux"
 import Button from 'react-bootstrap/Button';
 import { withRouter } from "react-router-dom"

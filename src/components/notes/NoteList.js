@@ -3,7 +3,7 @@ import React from 'react'
 // import Popup from "reactjs-popup";
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button';
-import { deleteNote } from '../actions/myNotes'
+import { deleteNote } from '../../actions/myNotes'
 import NoteEditForm from './NoteEditForm'
 
 class NoteList extends React.Component{

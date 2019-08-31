@@ -4,9 +4,9 @@ import Button from 'react-bootstrap/Button';
 // import NoteList from "./NoteList"
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
-import Note from './Note'
+import Note from '../notes/Note'
 import {connect} from 'react-redux'
-import NoteList from './NoteList'
+import NoteList from '../notes/NoteList'
 import { withRouter } from "react-router-dom"
 
 

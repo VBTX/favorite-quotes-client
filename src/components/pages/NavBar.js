@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Logout from './Logout'
+import Logout from '../login/Logout'
 // import Login from './LoginForm'
 import { NavLink } from 'react-router-dom'
 // import { setSearch } from '../actions/search'

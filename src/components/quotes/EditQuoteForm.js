@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { setFormDataForEdit } from "../actions/quoteForm"
-import { updateQuote } from "../actions/myQuotes"
+import { setFormDataForEdit } from "../../actions/quoteForm"
+import { updateQuote } from "../../actions/myQuotes"
 import { connect } from "react-redux"
 import QuoteForm from "./QuoteForm"
-import { resetQuoteForm } from "../actions/quoteForm"
+import { resetQuoteForm } from "../../actions/quoteForm"
 
 
 

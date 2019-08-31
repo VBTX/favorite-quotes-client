@@ -2,7 +2,7 @@
 //SYNC
 export const setMyCategories = categories => {
 	return {
-		type: "SET_MY_QUOTES",
+		type: "SET_MY_CATEGORIES",
 		categories
 	}
 }

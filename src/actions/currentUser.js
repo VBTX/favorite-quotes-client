@@ -1,6 +1,7 @@
 import { resetLoginForm } from "./loginForm"
 import { getMyQuotes } from "./myQuotes"
 import { clearQuotes } from "./myQuotes"
+import { getMyCategories } from "./categories"
 import { resetSignUpForm } from "./signupForm"
 
 
@@ -92,6 +93,7 @@ export const login = (credentials, history) => {
       } else {
         dispatch(setCurrentUser(user))
         dispatch(getMyQuotes())
+        dispatch(getMyCategories())
       }
 
 

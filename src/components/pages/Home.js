@@ -4,10 +4,11 @@ import React from 'react';
 // import Logout from './Logout'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
-import '../App.css';
+import '../../App.css';
 // import SearchQuotes from './SearchQuotes'
-import RandomQuote from "./RandomQuote"
+import RandomQuote from "../quotes/RandomQuote"
 import Button from 'react-bootstrap/Button';
+
 
 
 const Home = ({currentUser, loggedIn}) => {

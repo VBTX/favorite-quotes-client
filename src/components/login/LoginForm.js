@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { login } from '../actions/currentUser'
-import { updateLoginForm } from '../actions/loginForm'
+import { login } from '../../actions/currentUser'
+import { updateLoginForm } from '../../actions/loginForm'
 import Button from 'react-bootstrap/Button';
 
 

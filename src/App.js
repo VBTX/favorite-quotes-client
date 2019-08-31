@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './App.css';
-import Signup from "./components/Signup"
-import Login from "./components/LoginForm"
-import Home from "./components/Home"
-import MyQuotes from "./components/MyQuotes"
-import QuoteCard from "./components/QuoteCard"
+import Signup from "./components/login/Signup"
+import Login from "./components/login/LoginForm"
+import Home from "./components/pages/Home"
+import MyQuotes from "./components/quotes/MyQuotes"
+import QuoteCard from "./components/quotes/QuoteCard"
 import { getCurrentUser } from "./actions/currentUser"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NavBar from "./components/NavBar"
-import EditQuoteForm from "./components/EditQuoteForm"
-import NewQuoteForm from "./components/NewQuoteForm"
-import SearchQuotes from "./components/SearchQuotes"
+import NavBar from "./components/pages/NavBar"
+import EditQuoteForm from "./components/quotes/EditQuoteForm"
+import NewQuoteForm from "./components/quotes/NewQuoteForm"
+import SearchQuotes from "./components/search/SearchQuotes"
 
 
 class App extends Component {
+
+
+  componentWillMount(){
+    console.log(this.state)
+  }
 
 	componentDidMount(){
       this.props.getCurrentUser()
@@ -42,7 +47,7 @@ class App extends Component {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup}/>
             <Route exact path="/my-quotes" component={MyQuotes}/>
-             <Route exact path="/search" component={SearchQuotes}/>
+            <Route exact path="/search" component={SearchQuotes}/>
             <Route exact path="/my-quotes/new" component={NewQuoteForm}/>
             <Route exact path="/my-quotes/:id"    render={props => {
                    const quote = allQuotes.find((quote) => quote.id === parseInt(props.match.params.id));

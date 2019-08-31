@@ -1,12 +1,17 @@
 .QuickCard {
-	background-color:  whitesmoke;
+	background-color:  white;
 	box-shadow:  0 1px 3px rgba(0,0,0,0,0.12), 0 1px 2px rgba(0,0,0,0,0.24);
 	transition:  all 0.3s cubic-bezier(.25,.8,.25,1);
 	width:  33%;
+	height: auto;
 	display:  inline-block;
-	margin-bottom: 1.5%;
+	padding: auto;
+/* 	margin-bottom: 1.5%;
 	margin-left: 5%;
-	padding:  2%;
+	padding:  2%; */
+	margin: 2%;
+	padding: 2%;
+	display: flex-wrap;
 	font-family: 'Darker Grotesque', sans-serif;
 
 

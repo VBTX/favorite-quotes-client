@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
 import Button from 'react-bootstrap/Button';
-import QuickQuoteCard from './QuickQuoteCard'
+import QuickQuoteCard from '../quotes/QuickQuoteCard'
 
 
 const BASE_URL = "http://quotes.rest/qod.json"

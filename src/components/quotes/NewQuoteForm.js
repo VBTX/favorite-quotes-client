@@ -1,5 +1,5 @@
 import React from 'react';
-import { createQuote } from "../actions/myQuotes"
+import { createQuote } from "../../actions/myQuotes"
 import { connect } from "react-redux"
 import QuoteForm from "./QuoteForm"
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { setSearch, resetSearchForm } from '../actions/search';
+import { setSearch, resetSearchForm } from '../../actions/search';
 import { connect } from 'react-redux';
-import QuoteCard from './QuoteCard'
+import QuoteCard from '../quotes/QuoteCard'
 import Button from 'react-bootstrap/Button';
 // import NavBar from 'react-bootstrap/NavBar';
 import { withRouter } from "react-router-dom"

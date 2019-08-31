@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { updateNote } from "../actions/myNotes"
+import { updateNote } from "../../actions/myNotes"
 import { connect } from "react-redux"
 import Button from 'react-bootstrap/Button';
 import { withRouter } from "react-router-dom"

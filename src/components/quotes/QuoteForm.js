@@ -1,6 +1,6 @@
 import React from 'react';
-import { updateQuote } from '../actions/quoteForm'
-import { deleteQuote } from "../actions/myQuotes"
+import { updateQuote } from '../../actions/quoteForm'
+import { deleteQuote } from "../../actions/myQuotes"
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'

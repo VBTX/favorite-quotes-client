@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import { createNote } from "../actions/myNotes"
+import { createNote } from "../../actions/myNotes"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import ListGroup from 'react-bootstrap/ListGroup'
