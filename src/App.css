@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color:  whitesmoke;
 }
 
 .myQuotes {
@@ -10,9 +9,12 @@
 
 
 html, body {
-    margin: 0;
-    height: 100%;
-    background-color:  whitesmoke;
+  margin: 0;
+  background-image:  url("/images/joanna-kosinska-78uNJt1kPw8-unsplash.jpg"); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 /* 
 .App-logo {

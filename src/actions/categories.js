@@ -57,7 +57,7 @@ export const getMyCategories = () => {
 	}
 }
 
-// export const createQuote = (quoteData, history) => {
+// export const createCategory = (categoryData, history) => {
 // 	return dispatch => {
 // 		const sendableQuoteData = {
 // 			quote: {
