@@ -1,5 +1,24 @@
 .quote {
-	display: 'flex';
-	align-items: 'center';
-	justify-content: 'center';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	width: 40%;
+	height: auto;
+	margin: 10px;
+	border: 1px solid black;
+}
+
+@media only screen and (max-width: 1200px) {
+	.quote {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.card {
+		width: 80%;
+	}
 }

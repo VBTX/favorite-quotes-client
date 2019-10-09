@@ -45,13 +45,13 @@ class SearchQuotes extends Component {
 							type='text'
 							onChange={this.handleInputChange}
 						/>
-						<Button variant='success' type='submit'>
+						<Button className='success' type='submit' size='lg'>
 							SEARCH
 						</Button>
 					</Form.Group>
 				</Form>
 				<br />
-				<div className='col-md-12' style={{ display: 'flex' }}>
+				<div className='quotes'>
 					{this.state.quote.length === 0 ? (
 						<h2>No quote matched your search</h2>
 					) : (

@@ -12,10 +12,7 @@ import './QuoteCard.css';
 const QuoteCard = props => {
 	return props.quote ? (
 		<div className='quote'>
-			<Card
-				border='success'
-				style={{ width: '40rem', display: 'inline-block', padding: '10px' }}
-			>
+			<Card className='card' style={{ position: 'relative' }}>
 				<Card.Header>
 					<b>
 						<h1>Author: {props.quote.author} </h1>
@@ -39,15 +36,7 @@ const QuoteCard = props => {
 					</ListGroup>
 				</Card.Body>
 			</Card>
-			<Card
-				border='danger'
-				style={{
-					width: '40rem',
-					height: '365px',
-					display: 'inline-block',
-					padding: '10px'
-				}}
-			>
+			<Card className='card'>
 				<Card.Header>
 					<b>
 						<h1>Your Notes</h1>
