@@ -14,13 +14,13 @@ const Home = ({ currentUser, loggedIn }) => {
 		<>
 			{currentUser ? (
 				<>
-					<h1 style={{ fontFamily: "'Homemade Apple', cursive" }}>
+					<h1 style={{ fontFamily: "'Special Elite', cursive" }}>
 						<b> Welcome, {currentUser.name}! </b> <RandomQuote />
 					</h1>
 				</>
 			) : (
 				<>
-					<h1 style={{ fontFamily: "'Homemade Apple', cursive" }}>
+					<h1 style={{ fontFamily: "'Special Elite', cursive" }}>
 						<b>
 							{' '}
 							Welcome, stranger! :)
