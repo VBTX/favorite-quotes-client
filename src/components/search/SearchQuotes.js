@@ -3,9 +3,9 @@ import { setSearch, resetSearchForm } from '../../actions/search';
 import { connect } from 'react-redux';
 import QuoteCard from '../quotes/QuoteCard';
 import Button from 'react-bootstrap/Button';
-// import NavBar from 'react-bootstrap/NavBar';
 import { withRouter } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
+import Search from './Search.css';
 
 class SearchQuotes extends Component {
 	state = {
@@ -36,18 +36,19 @@ class SearchQuotes extends Component {
 	render() {
 		return (
 			<>
-				<Form className='mr-sm-2' onSubmit={this.handleSubmit}>
-					<h2>
-						<input
+				<Form onSubmit={this.handleSubmit}>
+					<Form.Group>
+						<Form.Control
 							name='search'
+							size='lg'
 							placeholder='Search Your Quotes'
 							type='text'
 							onChange={this.handleInputChange}
 						/>
-					</h2>
-					<Button variant='success' type='submit'>
-						SEARCH
-					</Button>
+						<Button variant='success' type='submit'>
+							SEARCH
+						</Button>
+					</Form.Group>
 				</Form>
 				<br />
 				<div className='col-md-12' style={{ display: 'flex' }}>

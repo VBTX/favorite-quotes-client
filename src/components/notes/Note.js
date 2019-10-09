@@ -18,7 +18,6 @@ class Note extends React.Component {
 
 	handleSubmit = (event, userId, quoteId, history) => {
 		event.preventDefault();
-		// this.setState({...this.state.text, [this.state.submit]: true})
 		this.props.createNote(
 			{
 				text: this.state.text,

@@ -7,10 +7,11 @@ import Note from '../notes/Note';
 import { connect } from 'react-redux';
 import NoteList from '../notes/NoteList';
 import { withRouter } from 'react-router-dom';
+import './QuoteCard.css';
 
 const QuoteCard = props => {
 	return props.quote ? (
-		<>
+		<div className='quote'>
 			<Card
 				border='success'
 				style={{ width: '40rem', display: 'inline-block', padding: '10px' }}
@@ -60,7 +61,7 @@ const QuoteCard = props => {
 					</ListGroup>
 				</Card.Body>
 			</Card>
-		</>
+		</div>
 	) : null;
 };
 

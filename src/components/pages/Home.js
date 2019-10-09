@@ -1,11 +1,7 @@
 import React from 'react';
-// import Login from './LoginForm'
-// import Signup from './SignUp'
-// import Logout from './Logout'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-// import SearchQuotes from './SearchQuotes'
 import RandomQuote from '../quotes/RandomQuote';
 import Button from 'react-bootstrap/Button';
 
@@ -26,9 +22,8 @@ const Home = ({ currentUser, loggedIn }) => {
 							Welcome, stranger! :)
 							<br />
 							<br />
-							<br />
-							<br />
-							If you want to start collecting your favorite quotes, please{' '}
+							If you want to start collecting your favorite quotes,
+							<br /> please{' '}
 							<Button
 								variant='primary'
 								size='lg'

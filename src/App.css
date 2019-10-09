@@ -91,14 +91,11 @@ a.active {
 
 .button-link {
 	color: white;
+	font-family: 'Special Elite', cursive;
 }
 
 .button-link:hover {
 	color: white;
 	text-decoration: none;
+	font-family: 'Special Elite', cursive;
 }
-/* .wrapper {
-  display: grid;
-  grid-template-columns: repeat(1, 5fr);
-  grid-auto-rows: 100px;
-} */
