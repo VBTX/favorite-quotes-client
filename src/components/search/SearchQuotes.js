@@ -5,7 +5,7 @@ import QuoteCard from '../quotes/QuoteCard';
 import Button from 'react-bootstrap/Button';
 import { withRouter } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import Search from './Search.css';
+import './Search.css';
 
 class SearchQuotes extends Component {
 	state = {
