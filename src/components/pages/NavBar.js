@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Logout from '../login/Logout';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = ({ setSearch, quotes }) => {
+const NavBar = () => {
 	return (
 		<div className='nav'>
 			<NavLink exact className='activeClass nav-link' to='/'>
