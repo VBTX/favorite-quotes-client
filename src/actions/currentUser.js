@@ -1,7 +1,6 @@
 import { resetLoginForm } from './loginForm';
 import { getMyQuotes } from './myQuotes';
 import { clearQuotes } from './myQuotes';
-import { getMyCategories } from './categories';
 import { resetSignUpForm } from './signupForm';
 
 //SYNC
@@ -85,7 +84,6 @@ export const getCurrentUser = () => {
 				} else {
 					dispatch(setCurrentUser(user));
 					dispatch(getMyQuotes());
-					dispatch(getMyCategories());
 				}
 			})
 			.catch(console.log);

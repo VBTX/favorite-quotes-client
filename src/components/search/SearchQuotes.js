@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import QuoteCard from '../quotes/QuoteCard';
 import Button from 'react-bootstrap/Button';
 import { withRouter } from 'react-router-dom';
-import NoteList from '../notes/NoteList';
 import Form from 'react-bootstrap/Form';
 import './Search.css';
 
