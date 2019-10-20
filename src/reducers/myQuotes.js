@@ -1,9 +1,38 @@
-export default (state = [], action) => {
+const INITIAL_STATE = {
+	quotes: [],
+	isFetching: false,
+	errorMessage: undefined
+};
+
+export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
+		case 'FETCH_QUOTES_START':
+			return {
+				...state,
+				isFetching: true
+			};
+		case 'FETCH_QUOTES_SUCCESS':
+			return {
+				...state,
+				isFetching: false,
+				quotes: action.quotes
+			};
+		case 'FETCH_QUOTES_FAILURE':
+			return {
+				...state,
+				isFetching: false,
+				errorMessage: action.payload
+			};
 		case 'SET_MY_QUOTES':
-			return action.quotes;
+			return {
+				...state,
+				quotes: action.quotes
+			};
 		case 'ADD_QUOTE':
-			return state.concat(action.quote);
+			return {
+				...state,
+				quotes: state.quotes.concat(action.quote)
+			};
 		case 'UPDATE_QUOTE':
 			return state.map(quote =>
 				quote.id === action.quote.id ? action.quote : quote
@@ -16,6 +45,7 @@ export default (state = [], action) => {
 			return [];
 		case 'FIND_IT':
 			return state.filter(quote => quote.text.includes(action.search));
+
 		default:
 			return state;
 	}
