@@ -19,9 +19,8 @@ class SearchQuotes extends Component {
 		const input = {
 			[name]: value
 		};
-		setTimeout(() => {
-			this.props.setSearch(input);
-		}, 5000);
+
+		this.props.setSearch(input);
 	};
 
 	handleSubmit = event => {
@@ -37,7 +36,6 @@ class SearchQuotes extends Component {
 	};
 
 	render() {
-		console.log(this.state.quote[0]);
 		return (
 			<>
 				<Form onSubmit={this.handleSubmit}>
@@ -47,7 +45,7 @@ class SearchQuotes extends Component {
 							size='lg'
 							placeholder='Search Your Quotes'
 							type='text'
-							onChange={this.handleInputChange}
+							onKeyUp={this.handleInputChange}
 						/>
 						<Button className='success' type='submit' size='lg'>
 							SEARCH
@@ -56,11 +54,10 @@ class SearchQuotes extends Component {
 				</Form>
 				<br />
 				<div className='quotes'>
-					{!this.state.quote[0] ? (
-						<h2>No quote matched your search</h2>
-					) : (
-						// <QuoteCard quote={this.state.quote[0]} />
+					{this.state.searched && this.state.quote[0] ? (
 						<QuickQuoteCard quote={this.state.quote[0]} />
+					) : !this.state.searched ? null : (
+						<h2>No quote matched your search</h2>
 					)}
 				</div>
 			</>
