@@ -14,8 +14,9 @@ const Logout = ({ logout, history }) => {
 		>
 			<Button
 				type='submit'
+				className='nav-link'
 				variant='outline-primary'
-				style={{ border: 'none', background: 'none', fontSize: '26px' }}
+				style={{ border: 'none', background: 'none', fontSize: '28px' }}
 			>
 				Log Out
 			</Button>
