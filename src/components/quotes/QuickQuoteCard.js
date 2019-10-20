@@ -68,8 +68,3 @@ export default withRouter(
 		{ createQuote }
 	)(QuickQuoteCard)
 );
-
-// handleToggle = event => {
-// 	console.log(event)
-// 	this.setState({toggled: !this.state.toggled})
-// }

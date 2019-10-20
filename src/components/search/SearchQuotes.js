@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { setSearch, resetSearchForm } from '../../actions/search';
 import { connect } from 'react-redux';
-import QuoteCard from '../quotes/QuoteCard';
+// import QuoteCard from '../quotes/QuoteCard';
+import QuickQuoteCard from '../quotes/QuickQuoteCard';
 import Button from 'react-bootstrap/Button';
 import { withRouter } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
@@ -18,7 +19,9 @@ class SearchQuotes extends Component {
 		const input = {
 			[name]: value
 		};
-		this.props.setSearch(input);
+		setTimeout(() => {
+			this.props.setSearch(input);
+		}, 5000);
 	};
 
 	handleSubmit = event => {
@@ -34,6 +37,7 @@ class SearchQuotes extends Component {
 	};
 
 	render() {
+		console.log(this.state.quote[0]);
 		return (
 			<>
 				<Form onSubmit={this.handleSubmit}>
@@ -52,10 +56,11 @@ class SearchQuotes extends Component {
 				</Form>
 				<br />
 				<div className='quotes'>
-					{this.state.quote.length === 0 ? (
+					{!this.state.quote[0] ? (
 						<h2>No quote matched your search</h2>
 					) : (
-						<QuoteCard quote={this.state.quote[0]} />
+						// <QuoteCard quote={this.state.quote[0]} />
+						<QuickQuoteCard quote={this.state.quote[0]} />
 					)}
 				</div>
 			</>
