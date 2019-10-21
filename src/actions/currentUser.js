@@ -1,9 +1,19 @@
 import { resetLoginForm } from './loginForm';
-import { getMyQuotes } from './myQuotes';
+// import { getMyQuotes } from './myQuotes';
 import { clearQuotes } from './myQuotes';
 import { resetSignUpForm } from './signupForm';
+import { takeEvery } from 'redux-saga/effects';
+import quotesActionTypes from '../reducers/quotesTypes';
 
 //SYNC
+
+export function* fetchQuotes() {
+	yield console.log('I am fired');
+}
+
+export function* fetchMyQuotesStart() {
+	yield takeEvery(quotesActionTypes.FETCH_QUOTES_START, fetchQuotes);
+}
 
 export const setCurrentUser = user => {
 	return {
@@ -59,7 +69,7 @@ export const login = (credentials, history) => {
 					alert(user.error);
 				} else {
 					dispatch(setCurrentUser(user));
-					dispatch(getMyQuotes());
+					fetchMyQuotesStart();
 					dispatch(resetLoginForm());
 					history.push('/');
 				}
@@ -83,7 +93,7 @@ export const getCurrentUser = () => {
 					alert(user.error);
 				} else {
 					dispatch(setCurrentUser(user));
-					dispatch(getMyQuotes());
+					fetchMyQuotesStart();
 				}
 			})
 			.catch(console.log);

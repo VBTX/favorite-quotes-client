@@ -3,7 +3,7 @@ import quotesActionTypes from './quotesTypes';
 const INITIAL_STATE = {
 	quotes: [],
 	isFetching: false,
-	errorMessage: undefined
+	errorMessage: null
 };
 
 export default (state = INITIAL_STATE, action) => {
