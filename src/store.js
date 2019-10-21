@@ -6,6 +6,8 @@ import myQuotes from './reducers/myQuotes';
 import signupForm from './reducers/signupForm';
 import quoteForm from './reducers/quoteForm';
 import search from './reducers/search';
+import thunk from 'redux-thunk';
+import { fetchMyQuotesStart } from './actions/quotesSagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -21,7 +23,8 @@ const reducer = combineReducers({
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
 	reducer,
-	composeEnhancer(applyMiddleware(sagaMiddleware))
+	composeEnhancer(applyMiddleware(sagaMiddleware, thunk))
 );
 
+sagaMiddleware.run(fetchMyQuotesStart);
 export default store;

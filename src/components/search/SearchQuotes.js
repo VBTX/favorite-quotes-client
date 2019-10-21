@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { setSearch, resetSearchForm } from '../../actions/search';
 import { connect } from 'react-redux';
-// import QuoteCard from '../quotes/QuoteCard';
 import QuickQuoteCard from '../quotes/QuickQuoteCard';
 import Button from 'react-bootstrap/Button';
 import { withRouter } from 'react-router-dom';
