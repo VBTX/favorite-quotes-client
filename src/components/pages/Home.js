@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../App.css';
 import RandomQuote from '../quotes/RandomQuote';
 import Button from 'react-bootstrap/Button';
+import TestC from './TestC';
 
 const Home = ({ currentUser, loggedIn }) => {
 	return (
@@ -13,6 +14,7 @@ const Home = ({ currentUser, loggedIn }) => {
 					<h1 style={{ fontFamily: "'Special Elite', cursive" }}>
 						<b> Welcome, {currentUser.name}! </b> <RandomQuote />
 					</h1>
+					<TestC />
 				</>
 			) : (
 				<>
