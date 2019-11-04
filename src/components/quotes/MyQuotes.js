@@ -6,8 +6,8 @@ import './MyQuotes.css';
 const MyQuotes = props => {
 	const quoteCards =
 		props.quotes.length > 0 ? (
-			<div className='container'>
-				<div className='myQuotes'>
+			<div className='myQuotes'>
+				<div className='container'>
 					<br />
 					{props.quotes.map(q => (
 						<QuickQuoteCard key={q.id} quote={q} />
