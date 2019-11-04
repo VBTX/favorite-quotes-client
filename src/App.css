@@ -1,8 +1,3 @@
-.myQuotes {
-	display: flexwrap;
-	flex-direction: row;
-}
-
 html,
 body {
 	margin: 0;

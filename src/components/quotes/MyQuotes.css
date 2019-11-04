@@ -1,0 +1,12 @@
+.myQuotes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+@media only screen and (max-width: 750px) {
+	.myQuotes {
+		flex-direction: column;
+	}
+}
