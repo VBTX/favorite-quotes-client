@@ -22,7 +22,7 @@ class App extends Component {
 		const { loggedIn, allQuotes } = this.props;
 
 		return (
-			<div className='App'>
+			<div className='container'>
 				<Router>
 					<br />
 					<br />
