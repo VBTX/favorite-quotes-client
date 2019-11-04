@@ -19,7 +19,7 @@ const NavBar = () => {
 				{' '}
 				Search Quotes{' '}
 			</NavLink>
-			<div className='activeClass nav-link'>
+			<div>
 				<Logout />
 			</div>
 		</div>

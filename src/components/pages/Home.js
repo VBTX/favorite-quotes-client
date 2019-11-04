@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 import '../../App.css';
 import RandomQuote from '../quotes/RandomQuote';
 import Button from 'react-bootstrap/Button';
-import TestC from './TestC';
 
 const Home = ({ currentUser, loggedIn }) => {
 	return (
 		<>
 			{currentUser ? (
-				<>
-					<h1 style={{ fontFamily: "'Special Elite', cursive" }}>
+				<div className='container'>
+					<br />
+					<br />
+					<h2 style={{ fontFamily: "'Special Elite', cursive" }}>
 						<b> Welcome, {currentUser.name}! </b> <RandomQuote />
-					</h1>
-					<TestC />
-				</>
+					</h2>
+				</div>
 			) : (
-				<>
+				<div className='container'>
 					<h1 style={{ fontFamily: "'Special Elite', cursive" }}>
 						<b>
 							{' '}
@@ -48,7 +48,7 @@ const Home = ({ currentUser, loggedIn }) => {
 							!
 						</b>
 					</h1>
-				</>
+				</div>
 			)}
 		</>
 	);
