@@ -12,6 +12,8 @@ import './QuoteCard.css';
 const QuoteCard = props => {
 	return props.quote ? (
 		<div className='quote'>
+			<br />
+			<br />
 			<Card className='card' style={{ position: 'relative' }}>
 				<Card.Header>
 					<b>

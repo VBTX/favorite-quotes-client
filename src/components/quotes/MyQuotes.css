@@ -5,6 +5,7 @@
 	justify-content: center;
 	box-shadow: 0 14px 28px rgba(162, 154, 154, 0.664),
 		0 10px 10px rgba(0, 0, 0, 0.22);
+	overflow-y: scroll;
 	padding: 1%;
 	margin: 5%;
 }

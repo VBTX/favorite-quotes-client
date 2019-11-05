@@ -30,9 +30,6 @@ class App extends Component {
 						<NavBar />{' '}
 					</>
 				) : null}
-				<br />
-				<br />
-				<br />
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/login' component={Login} />

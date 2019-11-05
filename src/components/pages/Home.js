@@ -8,13 +8,12 @@ const Home = ({ currentUser, loggedIn }) => {
 	return (
 		<>
 			{currentUser ? (
-				<div className='container'>
-					<br />
+				<>
 					<br />
 					<h2 style={{ fontFamily: "'Special Elite', cursive" }}>
 						<b> Welcome, {currentUser.name}! </b> <RandomQuote />
 					</h2>
-				</div>
+				</>
 			) : (
 				<div className='container'>
 					<h1 style={{ fontFamily: "'Special Elite', cursive" }}>

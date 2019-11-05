@@ -27,77 +27,87 @@ const QuoteForm = ({
 		//passing the object into a function that came from imported action
 	};
 	return (
-		<Card
-			style={{
-				width: '40rem',
-				display: 'inline-block',
-				padding: '10px',
-				border: '1px solid black',
-				boderRadius: '50%'
-			}}
-		>
-			<form
-				onSubmit={event => {
-					event.preventDefault();
-					handleSubmit(event, formData, userId, history);
+		<>
+			<br />
+			<br />
+			<Card
+				style={{
+					width: '80%',
+					display: 'inline-block',
+					padding: '10px',
+					border: '1px solid black',
+					boderRadius: '50%',
+					fontSize: '1.5rem'
 				}}
 			>
-				<Card.Header>
-					<strong>
-						<h2> Add Quote details: </h2>
-					</strong>
-				</Card.Header>{' '}
-				<br />
-				<Card.Body>
-					<ListGroup variant='flush'>
-						<input
-							type='text'
-							name='author'
-							value={formData.author}
-							onChange={handleOnChange}
-							placeholder='author'
-						/>
-						<br />
-						<textarea
-							type='text'
-							name='text'
-							onChange={handleOnChange}
-							value={formData.text}
-							placeholder='quote'
-						/>
-						<br />
-						<input
-							type='text'
-							name='source'
-							onChange={handleOnChange}
-							value={formData.source}
-							placeholder='source'
-						/>
-					</ListGroup>
-				</Card.Body>
-				{editMode ? (
-					<>
-						<Button type='submit' style={{ background: 'black' }}>
-							UPDATE
-						</Button>
+				<form
+					onSubmit={event => {
+						event.preventDefault();
+						handleSubmit(event, formData, userId, history);
+					}}
+				>
+					<Card.Header>
+						<strong>
+							<h2> Add Quote details: </h2>
+						</strong>
+					</Card.Header>{' '}
+					<br />
+					<Card.Body>
+						<ListGroup variant='flush'>
+							<input
+								type='text'
+								name='author'
+								value={formData.author}
+								onChange={handleOnChange}
+								placeholder='author'
+								border='1px solid black'
+							/>
+							<br />
+							<textarea
+								type='text'
+								name='text'
+								onChange={handleOnChange}
+								value={formData.text}
+								placeholder='quote'
+							/>
+							<br />
+							<input
+								type='text'
+								name='source'
+								onChange={handleOnChange}
+								value={formData.source}
+								placeholder='source'
+							/>
+						</ListGroup>
+					</Card.Body>
+					{editMode ? (
+						<>
+							<Button type='submit' style={{ background: 'black' }}>
+								UPDATE
+							</Button>
+							<Button
+								variant='danger'
+								onClick={() => deleteQuote(quoteId, history)}
+							>
+								{' '}
+								DELETE{' '}
+							</Button>
+						</>
+					) : (
 						<Button
-							variant='danger'
-							onClick={() => deleteQuote(quoteId, history)}
+							type='submit'
+							style={{
+								background: 'black',
+								borderColor: 'black',
+								fontSize: '1.5rem'
+							}}
 						>
-							{' '}
-							DELETE{' '}
+							ADD
 						</Button>
-					</>
-				) : (
-					<Button
-						type='submit'
-						style={{ background: 'black', borderColor: 'black' }}
-					>
-						ADD
-					</Button>
-				)}
-			</form>
-		</Card>
+					)}
+				</form>
+			</Card>
+		</>
 	);
 };
 

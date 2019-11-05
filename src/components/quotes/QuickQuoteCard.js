@@ -25,13 +25,17 @@ const QuickQuoteCard = ({ quote, createQuote, userId, history }) => {
 				<h3>
 					<i>
 						<strong>
-							<Link
-								to={`/my-quotes/${quote.id}`}
-								className='link'
-								key={quote.id}
-							>
-								{quote.text || quote.quote}
-							</Link>
+							{quote.text ? (
+								<Link
+									to={`/my-quotes/${quote.id}`}
+									className='link'
+									key={quote.id}
+								>
+									{quote.text || quote.quote}
+								</Link>
+							) : (
+								<h4>{quote.text || quote.quote}</h4>
+							)}
 						</strong>
 					</i>
 				</h3>

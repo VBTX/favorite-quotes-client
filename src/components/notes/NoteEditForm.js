@@ -37,6 +37,7 @@ class NoteEditForm extends Component {
 						value={this.state.note.text}
 						onChange={this.handleChange}
 					/>
+					<br />
 					<Button type='submit' onClick={this.handleSubmit} variant='secondary'>
 						SUBMIT
 					</Button>

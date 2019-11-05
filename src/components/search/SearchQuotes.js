@@ -38,6 +38,8 @@ class SearchQuotes extends Component {
 	render() {
 		return (
 			<>
+				<br />
+				<br />
 				<Form onSubmit={this.handleSubmit}>
 					<Form.Group>
 						<Form.Control
