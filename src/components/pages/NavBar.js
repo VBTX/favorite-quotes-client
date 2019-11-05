@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Logout from '../login/Logout';
+import { logout } from '../../actions/currentUser';
+import { withRouter } from 'react-router-dom';
+// import Logout from '../login/Logout';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({ logout, history }) => {
 	return (
 		<div className='container nav'>
 			<NavLink exact className='activeClass nav-link' to='/'>
@@ -19,7 +21,15 @@ const NavBar = () => {
 				{' '}
 				Search Quotes{' '}
 			</NavLink>
-			<Logout />
+			<NavLink
+				exact
+				type='submit'
+				onClick={() => logout(history)}
+				className='nav-link'
+				to='/'
+			>
+				Log Out
+			</NavLink>
 		</div>
 	);
 };
@@ -30,4 +40,9 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps)(NavBar);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		{ logout }
+	)(NavBar)
+);
