@@ -37,7 +37,7 @@ class SearchQuotes extends Component {
 
 	render() {
 		return (
-			<div className='container'>
+			<>
 				<Form onSubmit={this.handleSubmit}>
 					<Form.Group>
 						<Form.Control
@@ -60,7 +60,7 @@ class SearchQuotes extends Component {
 						<h2>No quote matched your search</h2>
 					)}
 				</div>
-			</div>
+			</>
 		);
 	}
 }

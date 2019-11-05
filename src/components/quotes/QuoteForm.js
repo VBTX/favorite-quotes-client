@@ -77,20 +77,23 @@ const QuoteForm = ({
 				</Card.Body>
 				{editMode ? (
 					<>
-						<Button type='submit' variant='outline-success'>
-							Update
+						<Button type='submit' style={{ background: 'black' }}>
+							UPDATE
 						</Button>
 						<Button
-							variant='outline-danger'
+							variant='danger'
 							onClick={() => deleteQuote(quoteId, history)}
 						>
 							{' '}
-							Delete{' '}
+							DELETE{' '}
 						</Button>
 					</>
 				) : (
-					<Button type='submit' variant='outline-success'>
-						Add
+					<Button
+						type='submit'
+						style={{ background: 'black', borderColor: 'black' }}
+					>
+						ADD
 					</Button>
 				)}
 			</form>
