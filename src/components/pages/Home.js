@@ -10,6 +10,9 @@ const Home = ({ currentUser, loggedIn }) => {
 			{currentUser ? (
 				<>
 					<br />
+					<br />
+					<br />
+					<br />
 					<h2 style={{ fontFamily: "'Special Elite', cursive" }}>
 						<b> Welcome, {currentUser.name}! </b> <RandomQuote />
 					</h2>
