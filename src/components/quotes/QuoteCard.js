@@ -38,6 +38,7 @@ const QuoteCard = props => {
 					</ListGroup>
 				</Card.Body>
 			</Card>
+
 			<Card className='card'>
 				<Card.Header>
 					<b>
