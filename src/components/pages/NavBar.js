@@ -19,9 +19,7 @@ const NavBar = () => {
 				{' '}
 				Search Quotes{' '}
 			</NavLink>
-			<div>
-				<Logout />
-			</div>
+			<Logout />
 		</div>
 	);
 };
