@@ -2,12 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/currentUser';
 import { withRouter } from 'react-router-dom';
-// import Logout from '../login/Logout';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = ({ logout, history }) => {
 	return (
-		<div className='container nav'>
+		<div className='nav'>
 			<NavLink exact className='activeClass nav-link' to='/'>
 				Home{' '}
 			</NavLink>

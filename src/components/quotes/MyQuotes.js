@@ -7,12 +7,10 @@ const MyQuotes = props => {
 	const quoteCards =
 		props.quotes.length > 0 ? (
 			<div className='myQuotes'>
-				<div className='container'>
-					<br />
-					{props.quotes.map(q => (
-						<QuickQuoteCard key={q.id} quote={q} />
-					))}
-				</div>
+				<br />
+				{props.quotes.map(q => (
+					<QuickQuoteCard key={q.id} quote={q} />
+				))}
 			</div>
 		) : (
 			'No quotes at the moment'

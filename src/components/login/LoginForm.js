@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/currentUser';
 import { updateLoginForm } from '../../actions/loginForm';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const Login = ({ loginForm, updateLoginForm, login, history }) => {
 	const handleInputChange = event => {
@@ -22,25 +23,30 @@ const Login = ({ loginForm, updateLoginForm, login, history }) => {
 
 	return (
 		<div className='container'>
-			<form onSubmit={handleSubmit}>
-				<input
-					type='text'
-					name='email'
-					value={loginForm.email}
-					placeholder='email'
-					onChange={handleInputChange}
-				/>
-				<input
-					type='password'
-					name='password'
-					value={loginForm.password}
-					placeholder='password'
-					onChange={handleInputChange}
-				/>
+			<Form onSubmit={handleSubmit} size='lg'>
+				<Form.Group>
+					<input
+						type='text'
+						name='email'
+						value={loginForm.email}
+						placeholder='email'
+						onChange={handleInputChange}
+					/>
+				</Form.Group>
+				<Form.Group>
+					<input
+						type='password'
+						name='password'
+						value={loginForm.password}
+						placeholder='password'
+						onChange={handleInputChange}
+					/>
+				</Form.Group>
 				<Button type='submit' variant='outline-primary'>
 					Log In
 				</Button>
-			</form>
+				{/* </form> */}
+			</Form>
 		</div>
 	);
 };

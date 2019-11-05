@@ -22,52 +22,46 @@ class App extends Component {
 		const { loggedIn, allQuotes } = this.props;
 
 		return (
-			<div className='container'>
-				<Router>
-					<br />
-					<br />
-					<br />
-					<br />
-					{loggedIn ? (
-						<>
-							<NavBar />{' '}
-						</>
-					) : null}
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<Switch>
-						<Route exact path='/' component={Home} />
-						<Route exact path='/login' component={Login} />
-						<Route exact path='/signup' component={Signup} />
-						<Route exact path='/my-quotes' component={MyQuotes} />
-						<Route exact path='/search' component={SearchQuotes} />
-						<Route exact path='/my-quotes/new' component={NewQuoteForm} />
-						<Route
-							exact
-							path='/my-quotes/:id'
-							render={props => {
-								const quote = allQuotes.find(
-									quote => quote.id === parseInt(props.match.params.id)
-								);
-								return <QuoteCard quote={quote} {...props} />;
-							}}
-						/>
-						<Route
-							exact
-							path='/my-quotes/:id/edit'
-							render={props => {
-								const quote = allQuotes.find(
-									quote => quote.id === parseInt(props.match.params.id)
-								);
-								return <EditQuoteForm quote={quote} {...props} />;
-							}}
-						/>
-					</Switch>
-				</Router>
-			</div>
+			<Router>
+				<br />
+				<br />
+				{loggedIn ? (
+					<>
+						<NavBar />{' '}
+					</>
+				) : null}
+				<br />
+				<br />
+				<br />
+				<Switch>
+					<Route exact path='/' component={Home} />
+					<Route exact path='/login' component={Login} />
+					<Route exact path='/signup' component={Signup} />
+					<Route exact path='/my-quotes' component={MyQuotes} />
+					<Route exact path='/search' component={SearchQuotes} />
+					<Route exact path='/my-quotes/new' component={NewQuoteForm} />
+					<Route
+						exact
+						path='/my-quotes/:id'
+						render={props => {
+							const quote = allQuotes.find(
+								quote => quote.id === parseInt(props.match.params.id)
+							);
+							return <QuoteCard quote={quote} {...props} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/my-quotes/:id/edit'
+						render={props => {
+							const quote = allQuotes.find(
+								quote => quote.id === parseInt(props.match.params.id)
+							);
+							return <EditQuoteForm quote={quote} {...props} />;
+						}}
+					/>
+				</Switch>
+			</Router>
 		);
 	}
 }

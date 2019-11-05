@@ -1,13 +1,19 @@
 html,
 body {
-	/* margin: 0; */
 	background: whitesmoke;
 	height: 100%;
 	text-align: center;
 }
-
+#root {
+	height: 100%;
+}
 .container {
 	border: 1px solid black;
+	height: 100%;
+	display: flex;
+	padding: 1%;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .btn-success {
@@ -29,16 +35,25 @@ body {
 }
 
 .nav {
+	box-shadow: 0 14px 28px rgba(162, 154, 154, 0.664),
+		0 10px 10px rgba(0, 0, 0, 0.22);
 	justify-content: space-evenly;
 	font-size: 25px;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 950px) {
 	.nav {
-		font-size: 5px;
+		font-size: 20px;
 	}
 	.nav-link {
-		font-size: 5px;
+		font-size: 20px;
+	}
+	h1 {
+		font-size: 1.5rem;
+	}
+	.container {
+		flex-direction: column;
+		justify-content: flex-start;
 	}
 }
 

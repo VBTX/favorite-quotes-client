@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import RandomQuote from '../quotes/RandomQuote';
-import Button from 'react-bootstrap/Button';
 
 const Home = ({ currentUser, loggedIn }) => {
 	return (
@@ -26,26 +25,21 @@ const Home = ({ currentUser, loggedIn }) => {
 							<br />
 							If you want to start collecting your favorite quotes,
 							<br /> please{' '}
-							<Button
-								variant='primary'
-								size='lg'
-								style={{ fontFamily: 'sans-serif' }}
+							<Link
+								to='/signup'
+								className='button-link'
+								style={{ background: 'black' }}
 							>
-								<Link to='/signup' className='button-link'>
-									SIGN UP
-								</Link>
-							</Button>{' '}
+								SIGN UP
+							</Link>
 							or{' '}
-							<Button
-								variant='success'
-								size='lg'
-								style={{ fontFamily: 'sans-serif' }}
+							<Link
+								to='/login'
+								className='button-link'
+								style={{ background: 'black' }}
 							>
-								<Link to='/login' className='button-link'>
-									LOG IN
-								</Link>
-							</Button>
-							!
+								LOG IN
+							</Link>
 						</b>
 					</h1>
 				</div>
