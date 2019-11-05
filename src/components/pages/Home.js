@@ -30,7 +30,7 @@ const Home = ({ currentUser, loggedIn }) => {
 							<Link
 								to='/signup'
 								className='button-link'
-								style={{ background: 'black' }}
+								style={{ background: 'black', padding: '1%' }}
 							>
 								SIGN UP
 							</Link>
@@ -38,7 +38,7 @@ const Home = ({ currentUser, loggedIn }) => {
 							<Link
 								to='/login'
 								className='button-link'
-								style={{ background: 'black' }}
+								style={{ background: 'black', padding: '1%' }}
 							>
 								LOG IN
 							</Link>

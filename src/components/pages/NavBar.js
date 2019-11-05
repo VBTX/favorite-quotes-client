@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = ({ logout, history }) => {
 	return (
-		<div className='nav top'>
+		<div className='nav'>
 			<NavLink exact className='activeClass nav-link' to='/'>
 				Home{' '}
 			</NavLink>
