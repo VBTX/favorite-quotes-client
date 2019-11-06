@@ -22,7 +22,6 @@ const NavBar = ({ logout, history }) => {
 			</NavLink>
 			<NavLink
 				exact
-				type='submit'
 				onClick={() => logout(history)}
 				className='nav-link'
 				to='/'
