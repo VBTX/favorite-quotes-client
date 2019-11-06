@@ -21,7 +21,7 @@ export const clearCurrentUser = () => {
 //ASYNC
 export const signup = (credentials, history) => {
 	return dispatch => {
-		return fetch('http://localhost:3001/api/v1/signup', {
+		return fetch('https://favorite-quotes-api.herokuapp.com/api/v1/signup', {
 			credentials: 'include',
 			method: 'POST',
 			headers: {
@@ -45,7 +45,7 @@ export const signup = (credentials, history) => {
 
 export const login = (credentials, history) => {
 	return dispatch => {
-		return fetch('http://localhost:3001/api/v1/login', {
+		return fetch('https://favorite-quotes-api.herokuapp.com/api/v1/login', {
 			credentials: 'include',
 			method: 'POST',
 			headers: {
@@ -70,13 +70,16 @@ export const login = (credentials, history) => {
 
 export const getCurrentUser = () => {
 	return dispatch => {
-		return fetch('http://localhost:3001/api/v1/get_current_user', {
-			credentials: 'include',
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json'
+		return fetch(
+			'https://favorite-quotes-api.herokuapp.com/api/v1/get_current_user',
+			{
+				credentials: 'include',
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json'
+				}
 			}
-		})
+		)
 			.then(r => r.json())
 			.then(user => {
 				if (user.error) {
@@ -95,7 +98,7 @@ export const logout = history => {
 		dispatch(clearCurrentUser());
 		dispatch(clearQuotes());
 		history.push('/');
-		return fetch('http://localhost:3001/api/v1/logout', {
+		return fetch('https://favorite-quotes-api.herokuapp.com/api/v1/logout', {
 			credentials: 'include',
 			method: 'DELETE'
 		});
