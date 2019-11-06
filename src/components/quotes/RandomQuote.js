@@ -3,7 +3,7 @@ import 'isomorphic-fetch';
 import Button from 'react-bootstrap/Button';
 import QuickQuoteCard from '../quotes/QuickQuoteCard';
 
-const BASE_URL = 'http://quotes.rest/qod.json';
+const BASE_URL = 'https://quotes.rest/qod.json';
 
 class RandomQuote extends Component {
 	state = {
