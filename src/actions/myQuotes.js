@@ -39,7 +39,7 @@ export const updateQuoteSuccess = quote => {
 
 export const getMyQuotes = () => {
 	return dispatch => {
-		return fetch('https://favorite-quotes-api.herokuapp.com/api/v1/quotes', {
+		return fetch('http://localhost:5000/api/v1/quotes', {
 			credentials: 'include',
 			method: 'GET',
 			headers: {
@@ -68,7 +68,7 @@ export const createQuote = (quoteData, history) => {
 				user_id: quoteData.userId
 			}
 		};
-		return fetch('https://favorite-quotes-api.herokuapp.com/api/v1/quotes', {
+		return fetch('http://localhost:5000/api/api/v1/quotes', {
 			credentials: 'include',
 			method: 'POST',
 			headers: {
@@ -100,17 +100,14 @@ export const updateQuote = (quoteData, history) => {
 				user_id: quoteData.userId
 			}
 		};
-		return fetch(
-			`https://favorite-quotes-api.herokuapp.com/api/v1/quotes/${quoteData.quoteId}`,
-			{
-				credentials: 'include',
-				method: 'PATCH',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(sendableQuoteData)
-			}
-		)
+		return fetch(`http://localhost:5000/api/v1/quotes/${quoteData.quoteId}`, {
+			credentials: 'include',
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(sendableQuoteData)
+		})
 			.then(r => r.json())
 			.then(quote => {
 				if (quote.error) {
@@ -128,16 +125,13 @@ export const updateQuote = (quoteData, history) => {
 
 export const deleteQuote = (quoteId, history) => {
 	return dispatch => {
-		return fetch(
-			`https://favorite-quotes-api.herokuapp.com/api/v1/quotes/${quoteId}`,
-			{
-				credentials: 'include',
-				method: 'DELETE',
-				headers: {
-					'Content-Type': 'application/json'
-				}
+		return fetch(`http://localhost:5000/api/v1/quotes/${quoteId}`, {
+			credentials: 'include',
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json'
 			}
-		)
+		})
 			.then(r => r.json())
 			.then(quote => {
 				if (quote.error) {
