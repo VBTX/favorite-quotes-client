@@ -9,7 +9,7 @@ export const createNote = (noteData, history) => {
 				user_id: noteData.userId
 			}
 		};
-		return fetch('https://favorite-quotes-api.herokuapp.com/api/v1/notes', {
+		return fetch('http://localhost:5000/api/v1/notes', {
 			credentials: 'include',
 			method: 'POST',
 			headers: {
@@ -40,17 +40,14 @@ export const updateNote = (noteData, history) => {
 				id: noteData.noteId
 			}
 		};
-		return fetch(
-			`https://favorite-quotes-api.herokuapp.com/api/v1/notes/${noteData.noteId}`,
-			{
-				credentials: 'include',
-				method: 'PATCH',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(sendableNoteData)
-			}
-		)
+		return fetch(`http://localhost:5000/api/v1/notes/${noteData.noteId}`, {
+			credentials: 'include',
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(sendableNoteData)
+		})
 			.then(r => r.json())
 			.then(note => {
 				if (note.error) {
@@ -66,16 +63,13 @@ export const updateNote = (noteData, history) => {
 
 export const deleteNote = (note, history) => {
 	return dispatch => {
-		return fetch(
-			`https://favorite-quotes-api.herokuapp.com/api/v1/notes/${note.id}`,
-			{
-				credentials: 'include',
-				method: 'DELETE',
-				headers: {
-					'Content-Type': 'application/json'
-				}
+		return fetch(`http://localhost:5000/api/v1/notes/${note.id}`, {
+			credentials: 'include',
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json'
 			}
-		)
+		})
 			.then(r => r.json())
 			.then(note => {
 				if (note.error) {
